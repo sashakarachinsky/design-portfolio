@@ -1,0 +1,16 @@
+@media screen and (max-device-width: 640px) {
+
+
+  .halfdiv {width: 86%; padding-right: 2%;}
+
+  .gallery {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+
+
+
+}
