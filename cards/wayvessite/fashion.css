@@ -1,0 +1,175 @@
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans');
+
+:root {
+		--mainColor: #e09535;
+		--mainColorTransparent: rgba(255,204,0,0.90);
+		--marginDesktop: -19%;
+		--marginMobile: -20%
+}
+
+body {  padding: 0; margin: 0;
+		line-height: 1.6; font-family: 'Josefin Sans', Futura, Futura PT, sans-serif;
+		font-size: 1em;
+		color: #aaa;
+		background-color: #222;
+		width: 100%;
+		min-width: 1000px;
+		}
+
+
+b, strong {font-weight: 700;}
+
+
+h1, h2 {clear: both; font-weight: 100; line-height: 1.5em;}
+
+#topLine {position: fixed; width: 100%; height: 16px; background-color: #222; z-index: 999; top: 0px; left: 0px;}
+
+#blockCreator {width: 119%; height: 950px; float: left; background: url('s/creator_bg.jpg') center bottom;
+background-size: cover; margin: -11% 0 5% -19%; padding: 15% 0 3 0%;}
+
+#creatorText {float: left; padding: 3% 25% 3% 15%; color: white;}
+#creatorText h1 {font-size: 3em; font-weight: normal; text-transform: uppercase; background-color: rgba(33,33,33,1); padding: 72px 66px 22px 66px; display: inline-block; }
+#creatorText p {font-weight: normal; text-transform: none;
+	text-shadow: 1px 1px 24px rgba(0,0,0,0.99);
+	 padding: 22px 66px; font-size: 1.6em; line-height: 1.6em; width: 85%; color: #fff;}
+
+	 #mark {display: none; position: absolute; right: 8%; bottom: 8%; padding: 9px 16px; border: 1px solid #555; z-index: 999; display: bloc; float: right; opacity: 0.5; transition: opacity 300ms;}
+	 #mark:hover {opacity: 1; transition: opacity 100ms;}
+	 #mark a:link:hover { border-bottom: 1px solid #ff007b; color: #ff007b;}
+
+#creatorCD {display: block; width: 95%; float: left;}
+
+#btnStore {height: 40px; margin: 16px 32px 8px 0px; padding: 0; opacity: 0.9; border-radius: 12px;}
+#btnStore:hover {opacity: 1; cursor: pointer; box-shadow: 1px 6px 32px rgba(255,255,255,0.5); }
+
+#castLink {width: 16px; padding: 0; opacity: 0.5;
+	 text-decoration: none !important;
+   border:0px !important;
+   outline:none;
+   border-width: 0px;
+   outline-width:0px;
+   border-bottom: none; display: none;}
+
+
+
+#castLink:hover { cursor: pointer;}
+
+#ytb {width: 45%; height: 40vh; font-weight: 100; margin: 64px 2% 0 0;}
+
+#date {color: var(--mainColor);}
+
+#photo {clear: both; float: left; }
+
+.backgroundy { background-repeat:  no-repeat; background-position: center top;
+						background-size: cover; float: left; color: #fff; padding: 64px 0 0 32px;}
+
+#block a:link {background-color: rgba(0,0,0,0); color: var(--mainColor); text-decoration: none; border-bottom: 1px solid var(--mainColor);}
+#block a:visited {background-color: rgba(0,0,0,0); color: var(--mainColor); text-decoration: none; border-bottom: 1px solid var(--mainColor);}
+#block a:hover {background-color: rgba(0,0,0,0); border-bottom: 1px solid #ff007b; color: #ff007b;}
+
+pre {font-size: 0.8em; line-height: 1.5em; padding-top: 2%; border-top: 1px solid #333; font-family: Courier New, monospace;}
+
+#blockHeader {padding: 3% 0 3% 0; font-size: 3.2em;}
+
+
+
+
+#container { margin: 3% 0 0 13%; width: 87%; float: left;}
+#block { float: left;  padding: 0 0 5% 0; width: 100%;}
+#subBlock {line-height: 1.6em; font-size: 1.8em; font-weight: 500; width: 60%; padding: 0; float: left;  }
+.menu {position: fixed; left: 32px;   height: 100%;  padding-top: 4%; font-size: 0.6em; text-transform: uppercase; letter-spacing: 0.1em; font-weight: 500; line-height: 3em;}
+
+
+
+
+
+#blockBio {line-height: 1.5em; font-size: 1.1em; font-weight: 300; width: 30%; padding: 0 0 0 3%; float: left;}
+
+#blockBioText {transition: opacity 300ms; clear: both; padding: 7% 0 0 0; opacity: 0.6;}
+
+#blockBioText:hover {transition: opacity 100ms; clear: both; padding: 7% 0 0 0; opacity: 1;}
+
+#blockAva {width: 33%; float: left; padding: 0 0 0 0;}
+
+#sCloud {width: 80%; height: 400px; box-shadow: -16px 0px 128px rgba(0,0,0,0.77); float: left;  padding: 0;}
+
+#bandcamp {width: 80%; box-shadow: -16px 0px 128px rgba(0,0,0,0.3); float: left; margin: 0 0 3% 0; padding: 0;}
+
+#bcWidget {float: left; width: 30%; }
+
+#bcText {float: left; width: 60%; padding: 2% 4%; line-height: 1.4em; font-size: 1.2em;}
+
+#bcText h1 {color: var(--mainColor);}
+
+#release {float: left; font-size: 1.2em; line-height: 1.3em; width: 33%; padding-bottom: 48px; }
+
+.cd {width: 64%; margin: 0 96px 24px 0; border: 1px solid rgba(0,0,0,0); display: block; box-shadow: 0px 112px 214px rgba(0,0,0,0.70);}
+
+#ph {width: 45%; padding-right: 2%;}
+
+p {padding-bottom: 24px;}
+
+a:link {transition: color 400ms; background-color: rgba(0,0,0,0); color: #fff; text-decoration: none; border-bottom: 1px solid #fff;}
+a:visited {background-color: rgba(0,0,0,0); color: #fff; text-decoration: none; border-bottom: 1px solid #fff;}
+a:hover {transition: color 100ms; background-color: rgba(0,0,0,0); border-bottom: 1px solid #ccc; color: var(--mainColor);}
+
+#logo {width: 75px;}
+
+#logoUncl {width: 140px; vertical-align: text-top; float: left; opacity: 0.5; padding-right: 24px;}
+
+#collabs {font-size: 0.8em;}
+
+
+
+#column {float: left; width: 47%; padding: 0 3% 32px 0; }
+
+#column100 {float: left; width: 70%; padding: 0 3% 32px 0; }
+
+#blockInfo {float: left; width: 96%; color: #ccc; margin-left: -19%; padding: 0 4% 4% 19%;  background: #181818; font-size: 1.6em; font-weight: 500;}
+
+
+.menu a {transition: color 400ms; color: white; border-bottom: 1px solid #999;}
+.menu a:hover {transition: color 100ms; color: var(--mainColor); border-bottom: 1px solid white;}
+
+sup {display: block; padding-bottom: 6px; font-style: italic; font-size: 0.8em; color: var(--mainColor); clear:both;}
+
+#cast {width: 45%; padding-right: 4%; float: left;}
+
+#participants {font-size: 0.8em;}
+
+
+/* ----------------------------------- MOBILE ----------------------------------------- */
+ /*@media (max-width: 1080px){*/
+
+ @media screen and (max-device-width: 640px) {
+
+	 #blockCreator, #creatorText {display: none;}
+
+	 #cast {width: 100%; padding-right: 0%; float: left;}
+
+	 body {font-size: 1.5em;}
+
+	 .menu {font-size: 0.}
+
+#bandcamp {box-shadow: none; width: 97%;}
+#bcText {padding-left: 0!important;}
+#bcText {float: left; width: 90%; padding: 2% 4%; line-height: 1.4em; font-size: 1.2em;}
+
+	 #ytb {width: 90%; height: 400px; font-weight: 100; margin: 64px 0 0 0;}
+
+	 #bcWidget {width: 80%; font-size: 2.5em;}
+
+#subBlock {line-height: 1.6em; font-size: 1.8em; font-weight: 500; width: 90%; float: left;  }
+
+#blockBio {line-height: 1.6em; font-size: 1.6em; font-weight: 300; width: 90%;  float: left; padding-left: 0!important;}
+
+#container {padding: 0; width: 81%; margin: 0 0 0 19%;}
+
+#blockBioText {clear: both; padding: 7% 0 0 0!important;; margin: 0!important; opacity: 1;}
+
+#blockInfo {background: none!important;}
+
+#blockHeader {font-size: 3.2em;}
+
+
+}

@@ -1,0 +1,63 @@
+@media screen and (max-device-width: 640px) {
+
+  .logoProstaya {mix-blend-mode: multiply; width: 70%!important; padding: 15% 15%!important;}
+
+  :root {
+      --globalPadding: 4%;
+    }
+
+  h1 {font-size: 4vw!important; padding: 4vw 0!important; display: block; text-align: left!important;}
+
+  h2 {line-height: 1.9em!important;}
+
+  p {font-size: 4vw!important; line-height: 1.3em!important; text-align: left;}
+
+  .btnTop {display: none;}
+
+  .btnFwd, .btnBack {width: 160px!important; height: 160px!important; background: #191919; top: auto!important; bottom: 0px!important;}
+  .btnBackBlackArrow, .btnFwdBlackArrow {background-color: white!important;}
+  .btnBack p {display: none;}
+  .btnFwd p {display: none;}
+
+  .btnBack:hover {background-position: 0% 100%!important; height: 160px!important;}
+  .btnFwd:hover {background-position: 0% 0%!important;}
+
+  #projectImg, #projectImgWhite {padding: 12vw 0 12vw 0!important;}
+
+  #canvasContainer {width: 90%!important;}
+
+  .projectNote {display: none;}
+
+  #innerTextBlockCenter { font-size: 4vw; line-height: 1.4em; padding: 0 0 8% 0!important; text-align: left!important; width: 80%!important; margin: var(--globalPadding)!important;}
+
+  #innerTextBlock {width: 80%!important; padding-left: 4%!important; margin: 0!important; font-size: 4vw!important; line-height: 1.4em;}
+
+  #leftColumn  {width: 92%!important; padding-left: 4%!important; margin: 0!important; font-size: 4vw!important; line-height: 1.4em;}
+
+
+  #specs {font-size: 4vw!important; line-height: 1.4em;}
+
+  #imgTopComment {width: 100%!important; font-size: 4vw!important;}
+
+  #projectImgTop {width: 100vw!important;}
+
+  #opinionText {font-size: 1em;}
+
+  .mobColorWhite {color: white!important;}
+
+  .bottomPrjLink {font-size: 1.6em!important; display: block; margin-top: 6%!important;}
+
+  #leftColumn, #rightColumn {font-size: 4vw!important; padding: 0!important; width: 100%; float: left; }
+
+  .copyleft {width: 60%!important; margin-bottom: 42px!important;}
+
+  .copyright {margin-right: 0!important; text-align: right!important; width: 40%!important;}
+
+
+  .logo2020 {display: none;}
+
+  #opinionInnerNew {padding: 0!important;}
+
+  .logoOstrov {display: block; width: 30%!important;}
+
+}

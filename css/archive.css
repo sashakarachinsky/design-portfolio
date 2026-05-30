@@ -1,0 +1,1904 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:100,400,700&subset=cyrillic');
+
+/* Глобально */
+:root {
+  --mainColor: #fc0;
+  --mainColorTransparent: rgba(255, 204, 0, 0.90);
+}
+
+body {
+  font-family: 'Montserrat';
+  font-size: 1.2em;
+  line-height: 1.3em;
+  padding: 0px 0px 0px 0px;
+  margin: 0;
+  text-align: center;
+  margin-right: 0px;
+  font-weight: 300;
+  background-color: #060606;
+  font-weight: 400;
+}
+
+.ico {
+  float: left;
+  margin: 28px 12px -16px -60px;
+
+}
+
+.logo2020 {
+  transition: all ease 200ms;
+  position: fixed;
+  top: 18px;
+  left: 18px;
+  width: 58px;
+  z-index: 9999;
+  opacity: 1;
+}
+
+.logo2020:hover {
+  transition: all ease 200ms;
+  opacity: 0.4;
+}
+
+#it-logus-web {
+  background: url('../p/logus-web.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  color: black;
+  text-align: center;
+}
+
+h2 {
+  font-size: 0.8em;
+  padding: 0px 0px 16px 0px;
+  color: grey;
+}
+
+h3 {
+  font-size: 3.2em;
+  font-weight: 100;
+  padding-bottom: 1px;
+  margin-left: -4px;
+  display: inline;
+}
+
+h4 {
+  font-size: 0.3em;
+  display: inline;
+  font-weight: 100;
+}
+
+/* Это где Логотипы - Сайты - и Ещё */
+h5 {
+  margin: 0;
+  padding: 0 0 24px 0;
+  font-size: 1.2em;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+}
+
+hr {
+  height: 1px;
+  border: 0;
+  border-top: 1px solid white;
+  display: block;
+}
+
+#serviceColumns h1 {
+  font-size: 2.2em;
+  font-family: 'Montserrat';
+  font-weight: 100;
+  padding-bottom: 24px;
+  color: white;
+}
+
+strong {
+  font-weight: 400;
+}
+
+/* Ссылки */
+a:link {
+  transition: color 400ms;
+  color: black;
+  text-decoration: none;
+  font-weight: 400;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  color: white;
+}
+
+a:visited {
+  transition: color 400ms;
+  color: black;
+  text-decoration: none;
+  font-weight: 400;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  color: white;
+}
+
+a:hover {
+  transition: color 100ms;
+  color: #fff;
+  border-bottom: 3px solid var(--mainColor);
+}
+
+.linkDark {
+  color: #323131 !important;
+}
+
+#img-link {
+  text-decoration: none;
+  border-bottom: none;
+  background: none;
+}
+
+h1 #linkBlack {
+  color: black;
+  border-bottom: 1px solid black;
+  background-color: red;
+}
+
+/* Верхнее меню */
+#topMenu {
+  position: fixed;
+  width: 80%;
+  height: 62px;
+  background-color: rgba(0, 0, 0, 0.56);
+  z-index: 999;
+  top: 0px;
+  left: 0px;
+  text-align: left;
+  padding: 38px 512px 0px 48px;
+  font-size: 0.9em;
+  color: #fff;
+  opacity: 0;
+}
+
+#topMenu a:link {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 200;
+  border-bottom: 1px solid #f1ae47;
+  background-color: transparent;
+}
+
+#topMenu a:visited {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 200;
+  border-bottom: 1px solid #f1ae47;
+  background-color: transparent;
+}
+
+#topMenu a:hover {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 200;
+  border-bottom: 1px solid #aa0000;
+}
+
+.padPlay {
+  display: none;
+  position: fixed;
+  bottom: 50%;
+  right: 2%;
+  width: 52px;
+  height: 52px;
+  background-color: rgba(22, 22, 22, 0.2);
+  padding: 12px;
+  color: white;
+  z-index: 9999;
+  opacity: 0;
+}
+
+.padFilter {
+  transition: opacity ease 300ms, background ease 400ms;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  height: 42px;
+  width: 100%;
+  color: white;
+  padding: 28px 0 12px 8%;
+  text-align: left;
+  z-index: 9998;
+  opacity: 0.4;
+  background-color: rgba (0, 0, 0, 0)
+}
+
+/* .padFilter:hover {transition: opacity ease 100ms, background ease 400ms; opacity: 1; background-color: rgba(12,12,12,0)} */
+.padFilter a {
+  margin-right: 32px;
+  display: none;
+}
+
+.padFilter a:hover {
+  color: white;
+  border-bottom: 1px solid blue;
+}
+
+.filter_link {
+  font-size: 0.8em;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.progressbar {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 2px;
+  background-color: blue;
+  height: 100%;
+  z-index: 9999;
+  opacity: 1;
+}
+
+/* */
+.second-link {
+  height: 308px;
+}
+
+/* Начало начал */
+.btnEnglish {
+  transition: opacity 200ms ease;
+  position: absolute;
+  transform: rotate(-90deg);
+  color: white;
+  z-index: 999;
+  left: -2%;
+  top: 23%;
+  font-size: 0.8em;
+  opacity: 0.4;
+}
+
+.btnEnglish:hover {
+  opacity: 1;
+  cursor: pointer;
+  transition: opacity 200ms ease;
+}
+
+#lang {
+  width: 32px;
+}
+
+.btnCTA {
+  opacity: 0;
+  position: fixed;
+  bottom: 150px;
+  right: -68px;
+  padding: 12px 24px 10px 24px;
+  background-color: none;
+  color: white;
+  text-transform: uppercase;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  border-radius: 32px;
+  border: 3px solid white;
+  cursor: pointer;
+  float: left;
+  font-size: 0.8em;
+  box-shadow: 0px 0px 64px rgba(255, 255, 255, 0.3);
+  transform: rotate(-90deg);
+  z-index: 9999;
+  transition: background 300ms ease, color 300ms ease, box-shadow 300ms ease;
+}
+
+.btnCTA:hover {
+  transition: background 200ms ease, color 200ms ease, box-shadow 200ms ease;
+  background-color: var(--mainColor);
+  border: 3px solid var(--mainColor);
+  color: black;
+  box-shadow: 0 0 128px var(--mainColor);
+}
+
+.welcome {
+  font-size: 0.9em;
+  margin: 6px 0px 0 0px;
+  padding: 0 0 18px 0;
+  top: 0px;
+  z-index: -1;
+  float: left;
+  text-align: left;
+  width: 100%;
+  color: #ccc;
+  background-color: #0f0f0f;
+  background: url('../s/welcome.jpg') no-repeat top center;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: 150%;
+}
+
+.welcome a:link {
+  color: var(--mainColor);
+  border-bottom: 1px solid var(--mainColor);
+  background-color: 0;
+  cursor: pointer;
+}
+
+.welcome a:visited {
+  color: var(--mainColor);
+  border-bottom: 1px solid var(--mainColor);
+}
+
+.welcome a:hover {
+  transition: color 400ms;
+  color: #FF0053;
+  border-bottom: 1px solid #FF0053;
+  cursor: pointer;
+}
+
+.welcome-logo {
+  width: 90%;
+  float: left;
+  margin-top: -46px;
+}
+
+.welcome-column-one {
+  width: 56%;
+  float: left;
+  font-size: 1.12em;
+}
+
+.welcome-column-two {
+  font-family: 'Montserrat';
+  color: white;
+  position: absolute;
+  width: auto;
+  margin-top: -138px;
+  right: 10%;
+  padding: 32px;
+  float: right;
+  background-color: rgba(30, 30, 30, 0.88);
+  line-height: 1.6em;
+  font-size: 0.9em;
+  box-shadow: 0 32px 128px rgba(0, 0, 0, 0.63);
+  border-radius: 12px;
+}
+
+#welcomeParallax {
+  position: absolute;
+  top: 800px;
+  right: 64px;
+  height: 500px;
+  width: 30%;
+  padding: 32px;
+  color: black;
+  background-color: #E7004E;
+  z-index: 1000;
+  color: white;
+  background: url('../s/welcomeParallax.jpg') no-repeat top center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.welcome-pad {
+  margin-left: 100px;
+  top: 20px;
+  height: 500px;
+  padding: 52px 32px 32px 32px;
+  min-width: 960px;
+}
+
+#autoScrollPad {
+  float: left;
+  padding: 14px 0 32px 4%;
+  margin: 0;
+  opacity: 1;
+}
+
+#autoScrollPad:hover {
+  color: #f1ae47;
+}
+
+#playButton {
+  width: 33px;
+  height: auto;
+  margin: -100% 0 0 20%;
+}
+
+#playButtonTwo {
+  -webkit-backface-visibility: hidden;
+  transition: width ease 200ms, margin ease 200ms;
+  width: 52px;
+  margin: 0;
+}
+
+#playButtonTwo:hover {
+  transition: width ease 100ms, margin ease 100ms;
+  width: 60px;
+  margin: -4px 0 0 -4px;
+}
+
+#zeroFuckedPad {
+  clear: both;
+  padding: 32px 0 32px 0;
+  opacity: 1;
+}
+
+#palm-left {
+  width: 33px;
+  height: auto;
+  margin-left: -33px;
+  margin-top: 0px;
+}
+
+#palm-right {
+  width: 33px;
+  height: auto;
+  margin-left: 0px;
+  margin-top: 0px;
+  float: left;
+  clear: both;
+}
+
+#iconClose {
+  position: absolute;
+  right: 32px;
+  top: 22px;
+  opacity: 0.7;
+}
+
+#iconClose:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.floatLeft {
+  float: left;
+}
+
+.text-Zero-FuckUps {
+  float: left;
+  margin-top: 18px;
+  color: #eee;
+}
+
+.autoscrollText {
+  float: left;
+  margin: -28px 50px;
+  color: #eee;
+}
+
+#likelyWelcome {
+  position: absolute;
+  right: 64px;
+  margin: 12px 0px 0px 0px;
+}
+
+.blogLink {
+  margin-top: 76px;
+  transition-timing-function: ease-in-out;
+  transition: border 300ms, border-radius 300ms, background-color 300ms, color 300ms, box-shadow 700ms;
+  float: left;
+  padding: 16px 24px 12px 24px;
+  border: 3px solid var(--mainColor);
+  color: var(--mainColor);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 0.9em;
+  border-radius: 64px;
+}
+
+.blogLink:hover {
+  transition-timing-function: ease-in-out;
+  cursor: pointer;
+  transition: border 300ms, border-radius 200ms, background-color 100ms, color 300ms, box-shadow 200ms;
+  border-radius: 64px;
+  color: black;
+  background-color: var(--mainColor);
+  box-shadow: 0px 16px 128px var(--mainColor);
+}
+
+.contacts {
+  line-height: 2em;
+}
+
+.contactsIcon {
+  width: 26px;
+  margin: 0 16px -8px -46px;
+  opacity: 0.4;
+}
+
+.socialPad {
+  clear: both;
+  float: left;
+  padding-bottom: 24px;
+}
+
+.iconFacebookInner {
+  float: left;
+  transition: opacity 1000ms;
+  margin: 0px 8px 2px -42px;
+  opacity: 0.5;
+  width: 30px;
+}
+
+.iconFacebookInner:hover {
+  transition: opacity 200ms;
+  opacity: 1;
+}
+
+.iconFacebookInner a:link {
+  text-decoration: none;
+  border: none;
+}
+
+.iconFacebookInner a:visited {
+  text-decoration: none;
+  border: none;
+}
+
+.iconFacebookInner a:hover {
+  text-decoration: none;
+  border: none;
+}
+
+#serviceColumns {
+  width: 92%;
+  padding: 32px 4% 0 4%;
+  float: left;
+  clear: both;
+  color: white;
+  background: url(../s/stars.jpg) center fixed;
+  background-repeat: repeat;
+  background-color: #0f0f0f;
+  font-size: 0.9em;
+}
+
+#serviceColumn {
+  float: left;
+  width: 24%;
+  padding: 4%;
+  text-align: left;
+}
+
+#serviceImg {
+  margin: 0 0 0px 0px;
+  display: block;
+  width: 96%;
+}
+
+.headerCalligraphy {
+  float: left;
+  clear: both;
+  display: block;
+  width: 95%;
+  padding: 0 5% 0 0;
+}
+
+/* Форма заказа */
+.padContact {
+  display: none;
+  position: fixed;
+  width: 50%;
+  padding: 3% 25% 0 25%;
+  height: 100%;
+  background-color: var(--mainColorTransparent);
+  margin: 0;
+  z-index: 10000;
+  font-size: 0.9em;
+}
+
+.padFields {
+  text-align: center;
+  background-color: rgba(255, 255, 255, 1);
+  box-shadow: 0 32px 128px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  border-radius: 8px;
+  margin: 0 0 0 0;
+  z-index: 5;
+  position: relative;
+  float: left;
+}
+
+.padFields-done {
+  height: 300px !important;
+}
+
+.padFields-con {
+  height: 650px !important;
+}
+
+.close {
+  position: absolute;
+  top: 32px;
+  right: 32px;
+  opacity: 0.3
+}
+
+.close:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.frm-buy-info {
+  width: 47%;
+  float: left;
+}
+
+.frm-container {
+  width: 90%;
+  margin: 0 0 0 0;
+  padding: 5%;
+  float: left;
+}
+
+.frm-item {
+  margin-top: 20px;
+}
+
+.frm-label {
+  color: black;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  font-size: 0.6em;
+  padding-left: 6px;
+}
+
+.frm-input {
+  border-bottom: 1px solid black;
+  margin-top: 6px;
+  height: 38px;
+  width: 100%;
+}
+
+.frm-input:hover {
+  border-bottom: 1px solid var(--mainColor);
+}
+
+#formComment {
+  border: none;
+  border-bottom: 1px solid black;
+  margin-top: 6px;
+  font-size: 1.1em;
+  height: 120px;
+  text-align: left;
+  width: 100%;
+}
+
+#formComment:hover {
+  border-bottom: 1px solid var(--mainColor);
+}
+
+.ostrovText {
+  margin-top: 7% !important;
+}
+
+.frm-input select, .frm-input textarea, .frm-input input {
+  width: 99%;
+  background-color: rgba(255, 255, 255, 0);
+  background-color: none;
+  outline: none;
+  border: none;
+  font-size: 1.1em;
+  padding: 6px;
+  color: #333333;
+}
+
+.frm-input select {
+  width: 100%;
+  height: 32px;
+}
+
+.frm-send-button {
+  border-radius: 32px;
+  font-size: 0.8em;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  width: 50%;
+  padding: 16px 0 16px 0;
+  margin: 32px 0 0px 25%;
+  background-color: black;
+  text-align: center;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  opacity: 0.2;
+  transition: background 300ms ease;
+}
+
+.frm-send-button:hover {
+  background-color: var(--mainColor);
+  color: white;
+  transition: background 100ms ease;
+}
+
+.frm-send-info {
+  margin-top: 10px;
+  font-size: 10px;
+  color: #555555;
+  text-align: center;
+}
+
+.frm-done-message {
+  padding-top: 110px;
+  color: rgba(0, 0, 0, 0.8);
+  font-size: 1.2em;
+  width: 100%;
+  text-align: center;
+  line-height: 1.4em;
+}
+
+/* Мой логотип */
+.logo {
+  position: fixed;
+  right: 0px;
+  z-index: 9999;
+  top: 0px;
+  align: left;
+  vertical-align: top;
+  text-align: left;
+  background-color: rgba(0, 0, 0, 0);
+  border: 0;
+}
+
+.logo a:link {
+  background: none;
+  border: none;
+  text-decoration: none;
+}
+
+#logo {
+  width: 48px;
+  height: 48px;
+  padding: 16px 42px;
+}
+
+/* */
+#canvas {
+  width: 100%;
+  z-index: 5;
+  position: relative;
+  top: 0px;
+  overflow: hidden;
+}
+
+.likely {
+  margin: 0px 0px 0px 24px;
+}
+
+/* По делу */
+#poDelu {
+  width: 80%;
+  padding: 64px 10% 64px 10%;
+  color: white;
+  text-align: left;
+  font-size: 1em;
+  float: left;
+  font-weight: 100;
+}
+
+#poDelu a:link {
+  color: white;
+  background-color: #FF4000;
+  padding: 0px 8px 4px 8px;
+  border-bottom: 1px solid #fff;
+}
+
+#poDelu a:visited {
+  color: white;
+  background-color: #FF4000;
+  padding: 0px 8px 4px 8px;
+  border-bottom: 1px solid #fff;
+}
+
+#poDelu a:hover {
+  color: white;
+  background-color: #FF4000;
+  padding: 0px 8px 4px 8px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0);
+}
+
+#textOrange {
+  border: 3px solid rgba(253, 78, 0, 0.72);
+  padding: 0px 8px 4px 8px;
+}
+
+/* Описание проекта */
+.projectDescription {
+  background-color: #222;
+  width: 92%;
+  padding: 64px 0 64px 8%;
+  color: white;
+  text-align: left;
+  font-size: 1em;
+  float: left;
+}
+
+.projectDescription h1 {
+  color: #fff;
+  margin-bottom: 32px;
+  font-family: 'Montserrat';
+  font-size: 2em;
+  line-height: 1.4em;
+  font-weight: 100;
+}
+
+.projectDescription a:link {
+  color: #fff;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.20);
+  margin-left: 0px;
+}
+
+.projectDescription a:visited {
+  color: #999;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.20)
+}
+
+.projectDescription a:hover {
+  color: #fff;
+  border-bottom: 3px solid var(--mainColor);
+}
+
+#appleLogo {
+  width: 30px;
+  vertical-align: middle;
+  margin: -20px 0px 0px 8px;
+}
+
+#projectInfo {
+  margin: -4px 0px 0px 8px;
+  text-decoration: none;
+}
+
+/* Блок с чужими логотипами */
+.blockLogotypes {
+  background-color: #f7f4f0;
+  float: left;
+}
+
+.logoBox {
+  width: 400px;
+  float: left;
+}
+
+.breaker {
+  width: 100%;
+  height: 0px;
+  clear: both;
+}
+
+.breakerAfterLogos {
+  height: 0px;
+  width: 100%;
+  clear: both;
+  float: left;
+}
+
+.logoContainer {
+  width: 33.333%;
+  float: left;
+  padding: 0;
+  margin: 0;
+  border: none;
+  background-color: #f7f4f0;
+  overflow: hidden;
+}
+
+.logoContainer a:link {
+  color: rgba(70, 160, 200, 1);
+  border-bottom: 1px solid rgba(70, 160, 200, 0.3);
+}
+
+.logoContainer a:visited {
+  color: rgba(180, 80, 130, 1);
+  border-bottom: 1px solid rgba(180, 80, 130, 0.3);
+}
+
+.logoContainer a:hover {
+  color: #e12177;
+  border-bottom: 1px solid #e12177;
+}
+
+.logoContainerActive {
+  transition: background-color 800ms;
+  width: 33.333%;
+  float: left;
+  padding: 0;
+  margin: 0;
+  border: none;
+  overflow: hidden;
+  background-color: #f7f4f0;
+  position: relative;
+}
+
+.logoContainerActive:hover {
+  transition: background-color 200ms;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+.logoContainerActive a:link {
+  color: rgba(70, 160, 200, 0.9);
+  border-bottom: 1px solid rgba(70, 160, 200, 0.3);
+}
+
+.logoContainerActive a:visited {
+  color: rgba(180, 80, 130, 0.8);
+  border-bottom: 1px solid rgba(180, 80, 130, 0.3);
+}
+
+.logoContainerActive a:hover {
+  color: #e12177;
+  border-bottom: 1px solid #e12177;
+}
+
+.cardContainer {
+  width: 33.333333%;
+  float: left;
+  padding: 0;
+  margin: 0;
+  border-right: none;
+  overflow: hidden;
+  background-color: #111;
+  position: relative;
+  text-align: left;
+}
+
+#cardImg {
+  transition: opacity 800ms;
+  opacity: 1;
+  width: 100%;
+  height: auto;
+  padding: 0;
+  border: none;
+  cursor: pointer;
+}
+
+#cardImg:hover {
+  transition: opacity 200ms;
+  opacity: 1;
+  cursor: pointer;
+}
+
+#itemPlayImg {
+  width: 64px;
+}
+
+.itemPlay {
+  position: absolute;
+  bottom: 12px;
+  left: 43%;
+  opacity: 0.8;
+}
+
+.punctLogo {
+  margin-left: -6px;
+}
+
+#logoImg {
+  transition: width 200ms;
+  width: 100%;
+  height: auto;
+  padding: 0;
+  border: none;
+  margin: -64px 0px -64px 0px;
+}
+
+#logoImg:hover {
+  transition: width 200ms;
+}
+
+.logoAbout {
+  position: relative;
+  margin: 0px 0px 0px 0px;
+  font-size: 0.8em;
+  color: #222;
+  height: 164px;
+  text-align: center;
+}
+
+#logoCategory {
+  font-family: 'Montserrat';
+  display: inline-block;
+  padding: 4px 9px 2px 9px;
+  text-transform: uppercase;
+  font-size: 0.6em;
+  border: 1px solid #ddd;
+  border-radius: 2px;
+  margin: 16px 6px 4px 6px;
+  color: #666;
+  letter-spacing: 0.1em;
+}
+
+#logoLink {
+  transition: opacity 500ms ease-out;
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+#logoLink:hover {
+  transition: opacity 200ms ease-out;
+  opacity: 1;
+}
+
+/* Кнопка Подробнее о логотипе */
+#logoCategoryCard {
+  display: inline-block;
+  padding: 4px 6px 4px 6px;
+  text-transform: uppercase;
+  font-size: 0.7em;
+  background-color: #e12177;
+  border: 1px solid #e12177;
+  border-radius: 4px;
+  margin: 16px 12px 4px -8px;
+  color: white;
+  ;
+}
+
+#logoCategoryCard:hover {
+  opacity: 0.8;
+}
+
+#logoCategoryCard a:link {
+  color: white;
+  text-decoration: none;
+  border: none;
+}
+
+#logoCategoryCard a:visited {
+  color: white;
+  text-decoration: none;
+  border: none;
+}
+
+#logoCategoryCard a:hover {
+  color: white;
+  text-decoration: none;
+  border: none;
+}
+
+#logoIntro {
+  width: 100%;
+  background-color: #eee;
+  padding: 64px 64px 0px 132px;
+  color: black;
+  text-align: left;
+  font-size: 0.8em;
+  float: left;
+}
+
+#ytb {
+  width: 100%;
+  height: 500px;
+  font-weight: 100;
+}
+
+/* Кнопка Назад */
+#backButton {
+  opacity: 1;
+  cursor: pointer;
+  position: fixed;
+  width: 64px;
+  height: 64px;
+  overflow: hiden;
+  z-index: 999;
+  top: 20px;
+  left: 12px;
+  text-align: left;
+  padding: 0px;
+}
+
+#backButton:hover {
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+#backButton a:link {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 200;
+  border-bottom: none;
+  background-color: transparent;
+}
+
+#backButton a:visited {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 200;
+  border-bottom: none;
+  background-color: transparent;
+}
+
+#backButton a:hover {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 200;
+  border-bottom: none;
+}
+
+.item {
+  clear: both;
+  float: left;
+  margin: 0px 0px 0px 0px;
+  padding-bottom: 0px;
+  position: relative;
+  background-color: white;
+  font-size: 0.9em;
+  width: 100%;
+}
+
+/* .item:hover{
+    transition: opacity 200ms;
+     opacity: 1;
+}
+ */
+.item a {
+  border: none;
+  text-decoration: none;
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+.item50 {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  float: left;
+}
+
+.parallax {
+  background-size: cover;
+  min-height: 600px;
+}
+
+.labelOutDiv {
+  position: fixed;
+  top: 4px;
+  left: 4px;
+  background-color: white;
+  z-index: 3000;
+}
+
+#it-prlx-backly {
+  background-color: #ff4600;
+  width: 100%;
+}
+
+#prlx-backly-brand {
+  position: absolute;
+  z-index: 500;
+  opacity: 1;
+  width: 100%;
+  min-width: 1224px;
+}
+
+#prlx-backly-ipad {
+  position: relative;
+  text-align: right;
+  right: -100px;
+  top: 256px;
+  padding-bottom: 256px;
+  overflow: hidden;
+  z-index: 500;
+  opacity: 1;
+}
+
+#it-prlx-casual24 {
+  background-color: #000;
+  width: 100%;
+  min-width: 1200px;
+}
+
+#prlx-casual24-brand {
+  position: absolute;
+  z-index: 500;
+  opacity: 1;
+  width: 100%;
+  min-width: 1024px;
+}
+
+#prlx-casual24-iphone {
+  position: relative;
+  text-align: right;
+  right: -100px;
+  top: 100px;
+  padding-bottom: 100px;
+  overflow: hidden;
+  z-index: 500;
+  opacity: 1;
+}
+
+#it-mosevent {
+  position: static;
+  background-color: rgba(0, 0, 0, 1);
+}
+
+#it-prlx-avatar {
+  background-color: rgba(0, 0, 1);
+  border: none;
+  margin: 0px;
+  padding: 0px;
+  width: 100%;
+  overflow: hidden;
+  float: left;
+}
+
+#prlx-avatar-bg {
+  position: absolute;
+  overflow: hidden;
+  z-index: 500;
+  opacity: 1;
+  width: 100%;
+  float: left;
+}
+
+#prlx-avatar-1 {
+  position: relative;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  overflow: hidden;
+  z-index: 500;
+  opacity: 1;
+  float: left;
+}
+
+#prlx-avatar-2 {
+  position: relative;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  overflow: hidden;
+  z-index: 501;
+  opacity: 1;
+  float: left;
+}
+
+#it-video {
+  position: relative;
+  padding-bottom: 35.4%;
+  /* 16:9 */
+  padding-top: 0px;
+  height: 0;
+}
+
+.videoWrapper {
+  position: relative;
+  padding-bottom: 73%;
+  padding-top: 25px;
+  height: 0;
+}
+
+.videoWrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.video-bg {
+  position: absolute;
+  overflow: hidden;
+  z-index: 500;
+  opacity: 1;
+  width: 102%;
+}
+
+.video-over {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  opacity: 1;
+  z-index: 505;
+  background-image: url('../s/video-mask.png');
+  background-repeat: repeat;
+}
+
+#mask-videosign {
+  padding: 0px;
+  margin: 0px;
+}
+
+video {
+  min-width: 1140px;
+  margin-left: -8px;
+}
+
+#experience {
+  position: absolute;
+  overflow: hidden;
+  background-size: 100% 100%;
+  overflow: hidden;
+  z-index: 500;
+  opacity: 1;
+}
+
+#it-experience {
+  background-color: rgba(255, 70, 0, 1);
+  border: none;
+  margin: 0px;
+  padding: 0px;
+}
+
+#yarko-1 {
+  position: absolute;
+  overflow: hidden;
+  background-size: 100% 100%;
+  overflow: hidden;
+  z-index: 500;
+  opacity: 1;
+}
+
+#yarko-2 {
+  position: relative;
+  overflow: hidden;
+  background-size: 100% 100%;
+  overflow: hidden;
+  z-index: 500;
+  opacity: 1;
+}
+
+#it-yarko {
+  background-color: rgba(255, 70, 0, 1);
+  border: none;
+  margin: 0px;
+  padding: 0px;
+}
+
+#polonium-1 {
+  position: relative;
+  overflow: hidden;
+  background-size: 100% 100%;
+  overflow: hidden;
+  z-index: 500;
+  opacity: 0;
+}
+
+#polonium-2 {
+  position: absolute;
+  overflow: hidden;
+  background-size: 100% 100%;
+  overflow: hidden;
+  z-index: 500;
+  opacity: 1;
+}
+
+#it-polonium {
+  background-color: rgba(0, 0, 0, 1);
+  border: none;
+  margin: 0px;
+  padding: 0px;
+}
+
+.text {
+  width: 40%;
+  float: left;
+}
+
+.artworks {
+  overflow: hidden;
+  position: relative;
+  float: right;
+  width: 50%;
+  padding: 0px 0px 0px 5%;
+}
+
+#sign-facebook {
+  border: none;
+  margin: 0px;
+  padding: 0px;
+}
+
+#sign-logo {
+  border: none;
+  margin: 0px;
+  padding: 0px;
+}
+
+#sign-facebook a:hover {
+  opacity: 0.8
+}
+
+/* nano */
+#nanoroubleBlock {
+  clear: both;
+  position: relative;
+  top: 0px;
+  padding: 0px;
+  margin-top: 0px;
+}
+
+#nanoroublePad a:link {
+  transition: color 400ms;
+  color: black;
+  text-decoration: none;
+  font-weight: 400;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+#nanoroublePad a:visited {
+  transition: color 400ms;
+  color: black;
+  text-decoration: none;
+  font-weight: 400;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+#nanoroublePad a:hover {
+  transition: color 100ms;
+  color: #FFCC00;
+}
+
+#nanoroublePad {
+  position: absolute;
+  top: 5%;
+  left: 36px;
+  width: 42%;
+  font-size: 0.8em;
+  text-align: left;
+  z-index: 10;
+  background-color: white;
+  padding: 32px;
+}
+
+/* */
+#mosmathLogo {
+  width: 300px;
+  text-decoration: none;
+  padding: 0 0 48px 0;
+}
+
+#mosmathLogo a {
+  text-decoration: none
+}
+
+#it-vk {
+  background-color: #e8e8e8;
+  border: none;
+  margin: 0px;
+  padding: 0px;
+}
+
+#it-polonium {
+  background-color: #000000;
+  border: none;
+  margin: 0px;
+  padding: 0px;
+}
+
+#it-origami {
+  background-color: #e8e8e8;
+  border: none;
+  margin: 0px;
+  padding: 0px;
+}
+
+#it-abs {
+  border-bottom: none;
+  margin: 0px 0px 0px 0;
+  padding: 0px;
+  background-image: url('../p/ui-abs.jpg');
+  background-size: auto;
+  background-position: center;
+  background-repeat: repeat;
+  border-top: 12px solid rgba(0, 0, 0, 0.6)
+}
+
+#it-eak {
+  border-bottom: 8px black solid;
+  margin: 0px 0px 0px -24px;
+  padding: 0px;
+  background-image: url('../p/ui-eak.jpg');
+  background-position: center;
+}
+
+#it-bourgeois {
+  border-bottom: none;
+  margin: 0px 0px 0px 0px;
+  padding: 0px;
+  background-image: url('../p/print-bourgeois.jpg');
+}
+
+#it-book {
+  border-bottom: none;
+  margin: 0px 0px 0px 0px;
+  padding: 0px;
+  background-image: url('../p/print-book.jpg');
+}
+
+#it-web {
+  border-bottom: none;
+  margin: 0px 0px 0px 0px;
+  padding: 0px;
+  background-image: url('../s/pattern3.png');
+  background-size: auto;
+  background-repeat: repeat;
+}
+
+#it-ulmart {
+  margin: 0px 0px 0px 0px;
+  padding: 0px;
+  background-image: url('../p/ui-ulmart-bg.jpg');
+  background-size: auto;
+  background-repeat: repeat;
+}
+
+#it-potok-iphone-gold {
+  border-bottom: 1px white solid;
+  margin: 0px 0px 0px 0px;
+  padding: 0px;
+  background-image: url('../p/potok/potok-bg.jpg');
+  background-repeat: repeat;
+  background-size: auto;
+}
+
+#it-potok-gold {
+  border-bottom: 8px black solid;
+  margin: 0px 0px 0px 0px;
+  padding: 0px;
+  background-color: #131313;
+  background-repeat: repeat;
+  background-size: auto;
+}
+
+#it-sasha-top {
+  border-bottom: 8px black solid;
+  margin: 0px 0px 0px 0px;
+  padding: 0px;
+  background-image: url('../s/sasha-top.jpg');
+  text-align: left;
+  background-repeat: repeat;
+  background-size: auto;
+}
+
+#it-me {
+  color: black;
+  border-bottom: none;
+  margin: 0px 0px 0px -48px;
+  background-color: #e1e1e1;
+  padding: 0;
+  height: 529px;
+  background-image: url('../s/me.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: auto;
+  font-size: 1.1em;
+}
+
+#itemStretch {
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  color: black;
+  text-align: center;
+}
+
+/* Befit 24 */
+#it-befit {
+  background: url('../p/oj.jpg') no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  color: black;
+  text-align: center;
+  padding: 64px 0 64px 0;
+  width: 100%;
+  float: left;
+}
+
+#descrBefit {
+  width: 30%;
+  padding: 2% 10% 2% 10%;
+  float: left;
+  color: #fff;
+  text-align: left;
+}
+
+/* The Ostrov */
+#logoOstrov {
+  width: 25%;
+  padding: 8% 0 0 25%;
+  float: left;
+  text-align: center;
+}
+
+#it-ostrov {
+  background: url('../p/ostrov.jpg') no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-color: white;
+  color: white;
+  text-align: center;
+  padding: 0px 0 64px 0;
+  width: 100%;
+  float: left;
+  margin: -1px 0 0px 0;
+}
+
+#postWelcome {
+  width: 25%;
+  padding: 8% 5% 0 10%;
+  float: left;
+  color: #fff;
+  text-align: left;
+}
+
+#itemDescription {
+  /*background: -webkit-linear-gradient(65deg, rgba(0,0,0,0.5), rgba(0,0,0,0) 50%);*/
+  width: 25%;
+  font-size: 1.2em;
+  float: left;
+  color: #fff;
+  text-align: left;
+  padding: 10% 0% 48px 72px;
+}
+
+#itemDescription h1 {
+  display: block;
+  margin-bottom: 32px;
+  line-height: 1.24em;
+}
+
+#itemDescription a:link {
+  transition: color 400ms;
+  text-decoration: none;
+  font-weight: 700;
+  border-bottom: 1px solid #fff;
+  color: #fff;
+}
+
+#itemDescription a:visited {
+  transition: background ease 200ms, color 200ms;
+  text-decoration: none;
+  font-weight: 400;
+  border-bottom: 1px solid #fff;
+  color: #fff;
+}
+
+#itemDescription a:hover {
+  transition: background ease 100ms, color ease 100ms, border-bottom ease 100ms;
+  border-bottom: 1px solid var(--mainColor) !important;
+  color: var(--mainColor) !important;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* */
+#it-nelo {
+  background-color: white;
+  color: black;
+  text-align: center;
+  padding: 64px 0 64px 0;
+  width: 100%;
+  float: left;
+}
+
+#img50pads {
+  width: 50%;
+  padding: 0px 0px 0px 0px;
+  float: left;
+  text-align: center;
+}
+
+#img50 {
+  width: 50%;
+  padding: 0px 0px 0px 0px;
+  float: left;
+  text-align: center;
+}
+
+#descr50pads {
+  width: 35%;
+  padding: 10% 32px 0px 64px;
+  float: left;
+  color: white;
+  text-align: left;
+}
+
+#descr50onwhite {
+  width: 30%;
+  padding: 8% 10% 0px 10%;
+  float: left;
+  color: #333;
+  text-align: left;
+}
+
+#descr50onwhite a:link {
+  transition: color 400ms;
+  text-decoration: none;
+  font-weight: 400;
+  border-bottom: 1px solid #f6c065;
+  color: #333;
+}
+
+#descr50onwhite a:visited {
+  transition: color 400ms;
+  text-decoration: none;
+  font-weight: 400;
+  border-bottom: 1px solid #f6c065;
+  color: #333;
+}
+
+#descr50onwhite a:hover {
+  transition: color 100ms;
+  color: #f6c065;
+}
+
+.item50 {
+  margin: 0px 0px 0px 0px;
+  padding-bottom: 0px;
+  background-size: 100% 100%;
+  overflow: hidden;
+}
+
+#logoTop {
+  transition: width 300ms;
+  width: 360px;
+  padding: 64px 0 32px 0;
+  float: left;
+  margin-right: -5%;
+}
+
+#projectDescriptionTwo {
+  display: block;
+  float: left;
+  width: 60%;
+  padding-left: 10%;
+}
+
+/*@media (max-width: 1080px){*/
+/* ----------------------------------- MOBILE ----------------------------------------- */
+@media screen and (max-device-width: 640px) {
+  .padPlay {
+    display: none;
+  }
+
+  #postWelcome {
+    display: none;
+  }
+
+  .contactLink {
+    float: left !important;
+    clear: both !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  #zeroFuckedPad {
+    display: none;
+  }
+
+  .parallax {
+    background-size: cover;
+    background-position: top right;
+    background-size: 150%;
+  }
+
+  #padGeo {
+    display: none;
+  }
+
+  .btnCTA {
+    display: none;
+  }
+
+  .welcome-column-one {
+    width: 80%;
+  }
+
+  .welcome {
+    background-position: right top;
+    background-size: 240%;
+    padding-bottom: 86px;
+    float: left;
+    font-size: 1.2em;
+    line-height: normal;
+    margin: 0;
+  }
+
+  .btnEnglish {
+    display: none;
+  }
+
+  .btnEnglishMobile {
+    display: block;
+    zoom: 150%;
+    float: left;
+    width: 100%;
+    padding-bottom: 32px;
+  }
+
+  .contactsIcon {
+    display: none;
+  }
+
+  .welcome-pad {
+    padding: 0;
+  }
+
+  .welcome {
+    background: #111;
+  }
+
+  .padOpinions {
+    background-size: cover;
+  }
+
+  #serviceColumns {
+    display: none;
+  }
+
+  #serviceColumn {
+    width: 100%;
+  }
+
+  #itemDescription {
+    width: 75%;
+    font-size: 2.4em;
+    zoom: 100% !important;
+    line-heigh: 1em;
+    color: white !important;
+  }
+
+  #itemDescription a {
+    background-color: rgba(0, 0, 0, 0.7)
+  }
+
+  #itemDescription p {
+    display: none;
+  }
+
+  .mainOpinion {
+    width: 110%;
+  }
+
+  #projectDescriptionTwo {
+    width: 100%;
+    padding: 0px;
+  }
+
+  h1 {
+    font-size: 2em;
+  }
+
+  .logoContainerActive, .logoContainer {
+    width: 50%
+  }
+
+  .linkDark {
+    color: white !important;
+  }
+
+  .padOpinions {
+    padding: 0;
+  }
+
+  #opinionName {
+    margin-left: -40px;
+    font-weight: 800;
+  }
+
+  .logo {
+    display: none;
+  }
+
+  #logoTop {
+    transition: width 300ms;
+    width: 100%;
+    padding: 64px 25% 72px 0;
+  }
+
+  .blogLink {
+    margin: 0 0 0 -28px;
+  }
+
+  .sashaPhoto {
+    display: block;
+    width: 70%;
+  }
+}

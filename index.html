@@ -1,0 +1,991 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+
+
+  <title>Karachinsky Design</title>
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="s/fb_preview_2020.jpg" />
+  <meta name="theme-color" content="#080808" >
+  <meta property="og:title" content="Karachinsky // Логотипы, сайты, приложения" />
+  <meta property="og:description" content="Авторский брендинг с вниманием к
+деталям. Своего рода дизайн эмоций. " />
+  <link rel="icon" type="image/png" href="s/favicon.png" />
+
+
+  <link href="css/fashion.css" rel="stylesheet" type="text/css" />
+  <link href="css/mobile.css" rel="stylesheet" type="text/css" />
+
+  <!-- Meta -->
+  <meta name="description" content="Karachinsky // Брендинг, дизайн, арт-дирекшн" />
+  <meta name="keywords" content="ярко, логотип, лого, хочу логотип, сделать логотип, дизайн логотипа, брендинг, дизайн, сайты, интерфейсы, дизайн, сделать сайт, дизайн сайта, дизайн приложения, ios, iphone, ipad, androi, карачинский, karachinsky" />
+  <meta name="yandex-verification" content="3f9d0b7a607a6673" />
+  <!-- End of meta -->
+
+  <script src="js/jquery.min.js"></script>
+
+  <script src="js/java-main.js"></script>
+  <script src="js/java.js"></script>
+</head>
+
+<body onload="pageLoaded(); animateParallax();" onresize="resize(); animateParallax();" id="topOfTheWorld">
+
+  <div class="windowBorder"></div>
+
+  <!--
+<div class="videoOverlay">
+    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/672TY8K2PKk?autoplay=1&loop=1&controls=0&color=white&theme=light&mute=1&modestbranding=0&rel=0&showinfo=0&enablejsapi=1&&playerapiid=featuredytplayer&wmode=transparent" title="" frameborder="0" allow="autoplay" allowfullscreen></iframe>
+</div>
+-->
+
+  <div class="padPlay" id="padPlay">
+    <div class="floatLeft"><img src="s/play.png" id="playButtonTwo" align="left" onmouseover="autoscrollStart()" onmouseout="autoscrollStop()" /></div>
+  </div>
+
+  <a href="#topOfTheWorld">
+    <div class="logoAnimated">
+      <div class="logoAnimatedMask">
+        <img src="s/logo_animated/circle_half.svg" class="logoAnimatedCircleHalf1">
+      </div>
+      <div class="logoAnimatedMask">
+        <img src="s/logo_animated/circle_3_of_4.svg" class="logoAnimatedCircleHalf2">
+      </div>
+      <div class="logoAnimatedMask">
+        <img src="s/logo_animated/circle_half.svg" class="logoAnimatedCircleHalf3">
+      </div>
+
+      <div class="logoAnimatedMask logoRow2 maskRow2Tri">
+        <img src="s/logo_animated/tri_down.svg" class="logoAnimatedTri1">
+      </div>
+      <div class="logoAnimatedMask maskRow2Tri">
+        <img src="s/logo_animated/tri_down.svg" class="logoAnimatedTri2">
+      </div>
+      <div class="logoAnimatedMask maskRow2Tri">
+        <img src="s/logo_animated/tri_down.svg" class="logoAnimatedTri3">
+      </div>
+
+      <div class="logoAnimatedMask logoRow2 maskRow2">
+        <img src="s/logo_animated/circle_half_mirrored.svg" class="logoAnimatedCircleHalf4">
+      </div>
+      <div class="logoAnimatedMask maskRow2">
+        <img src="s/logo_animated/circle_half_mirrored.svg" class="logoAnimatedCircleHalf5">
+      </div>
+      <div class="logoAnimatedMask maskRow2">
+        <img src="s/logo_animated/circle_half_mirrored.svg" class="logoAnimatedCircleHalf6">
+      </div>
+
+      <div class="logoAnimatedMask maskRow2Tri">
+        <img src="s/logo_animated/tri_up.svg" class="logoAnimatedTri4">
+      </div>
+      <div class="logoAnimatedMask maskRow2Tri">
+        <img src="s/logo_animated/tri_up.svg" class="logoAnimatedTri5">
+      </div>
+      <div class="logoAnimatedMask maskRow2Tri">
+        <img src="s/logo_animated/tri_up.svg" class="logoAnimatedTri6">
+      </div>
+    </div>
+  </a>
+
+
+  <div class="menuLeft" id="menuLeft">
+    <a href="#topOfTheWorld" class="filter_link">Предисловие</a>
+    <div class="menuLeftDecor"></div>
+    <a href="#anchorWWW" class="filter_link">Сайты</a>
+    <div class="menuLeftDecor"></div>
+    <a href="#anchorLogos" class="filter_link">Логотипы</a>
+    <div class="menuLeftDecor"></div>
+    <a href="#anchorFeedback" class="filter_link">Отзывы</a>
+  </div>
+
+  <div class="btnMail" id="btnMail" onclick="location.href='mailto:karachinsky@me.com?subject=Привет! Хочу заказать дизайн!'; autoscrollStop();">Написать письмо</div>
+  <div class="logo">
+    <a href="#topOfTheWorld" onclick="autoscrollStop();"><img src="s/up.png" class="btnTop"></a>
+  </div>
+
+
+  <div class="progressbar" id="progressbar"></div>
+
+  <div class="screenPreview" id="screenPreview"></div>
+
+
+  <div id="canvas">
+    <div class="welcome" id="welcomePad">
+      <div class="welcome-logo">
+
+        <img src="s/logo-top-ru.png" id="logoTop" />
+        <div class="btnEnglishMobile" onclick="location.href='en/index.html'"><img src="s/usa_flag.png" id="lang"> In English, please</div>
+        <div class="blogLink" onclick="location.reload();location.href='cards/blog/freelance/index.html'">Текст о фрилансе</div>
+        <div class="btnEnglish" onclick="location.href='en/index.html'"><img src="s/eng.svg" id="lang"></div>
+      </div>
+
+      <div class="welcome-column-one">
+        <br />
+        Я создаю классные узнаваемые логотипы и яркие вдохновляющие сайты &mdash; работаю с маленькими стартапами и компаниями из списка Форбс. Со многими клиентами мы становимся друзьями. И это, пожалуй, самая честная характеристика. <a
+          href="#anchorFeedback">А&nbsp;отзывы
+          &mdash; здесь</a>.
+        <br />
+        <br />
+        Я работаю с легкостью, нахожу интересное в любой задаче и всегда предлагаю разные решения&nbsp;&mdash;
+        от консервативных до сверхсовременных. Вот как можно со мной связаться:
+
+        <br /><br />
+
+        <div class="contacts">
+          <a href="https://facebook.com/sashakarachinsky">Sasha Karachinsky</a> &mdash; фейсбук</br>
+          <span class="atMargin">@</span><a href="https://t.me/karachinsky">karachinsky</a>&mdash; телеграм</br>
+          <a href="mailto:karachinsky@me.com">karachinsky@me.com</a> &mdash; почта</br>
+          <span class="atMargin">@</span><a href="https://instagram.com/nowayves">nowayves</a> &mdash; инстаграм</br>
+        </div>
+
+        <!--        <img src="p/welcome_logos.jpg" class="welcomeLogos"> -->
+
+      </div>
+
+      <div id="zeroFuckedPad" style="color: white">
+        <div class="floatLeft"><img src="s/palm-left.png" id="palm-left" align="left" /></div>
+        <div class="text-Zero-FuckUps"><strong>Zero fucked up deadlines. Since 2006.</strong></div>
+        <div class="floatLeft"><img src="s/palm-right.png" id="palm-right" /></div>
+      </div>
+
+
+
+
+
+
+
+
+      <div class="welcome-column-two" id="padGeo">
+        <div id="iconClose" style="display: none;"><img src="s/close.png" width="24px" onclick="$(this).parent().parent().hide();" /></div>
+        <strong style="display: block; text-transform: uppercase; letter-spacing: 0.3em; font-size: 0.6em; margin: -10px 0 -16px 0; ">Международные проекты</strong><br />
+        <div class="usa_flag"></div><strong>США</strong>&nbsp;&mdash; Art Crossing, Lendnest<br />
+        <strong>Россия</strong>&nbsp;&mdash; Сбер, ACCEL, Toyota, Юзтех
+        <strong>Мальдивы</strong>&nbsp;&mdash; The Ostrov<br />
+        <strong>Индонезия</strong>&nbsp;&mdash; Nuanu, Ash, SOL<br />
+        <strong>Италия</strong>&nbsp;&mdash; 3Caravelle, Viblix<br />
+        <strong>Камбоджа</strong>&nbsp;&mdash;
+        Mirax Group<br />
+      </div>
+    </div>
+
+
+
+    <div class="serviceColumns parallax">
+      <!-- <div id="rocket"><img src="s/rocket.png" width="200px" /></div> -->
+      <div id="serviceColumn">
+        <!--<img class="headerCalligraphy" src="s/header_logos_ru.png" />-->
+        <h5>Логотипы</h5>
+        <p>
+          Я создаю знаки, красивые логотипы, анимирую их и даже <a href="cards/befit/tender/index.html">придумываю к ним музыку</a>.
+        </p>
+      </div>
+      <div id="serviceColumn">
+        <!--<img class="headerCalligraphy" src="s/header_sites_ru.png" />-->
+        <h5>Сайты</h5>
+        <p>
+          Яркие, простые, а&nbsp;<a href="cards/lorus/site/index.html">иногда наоброт &mdash; сложные</a>, но всегда уникальные.
+        </p>
+      </div>
+      <div id="serviceColumn">
+        <!--<img class="headerCalligraphy" src="s/header_etc_ru.png" />-->
+        <h5>И ещё</h5>
+        <p>
+          Все, что вам придет в голову. Я&nbsp;делал флаги, верстал журнал,
+          <a href="cards/ostrov/all/index.html">оформлял дирижабль</a>. Словом, мне интересно всё.
+        </p>
+      </div>
+
+      <!--<img src="p/welcome_logos.png" class="welcomeLogos2">
+-->
+
+    </div>
+
+
+
+
+      <div class="starsky colorChange1">
+
+    <!--    <div class="item filtered parallax clickable filterLogo" style="background-image: url('p/nuanu.jpg');" onclick="location.href='cards/iam/identity/index.html'">
+          <div class="itemTag">Айдентика</div>
+          <div class="itemDescription">
+            <h1><a href="cards/iam/identity/index.html">Nuanu Projects</a>
+            </h1>
+          </div>
+        </div>
+
+
+
+
+
+
+
+
+
+        <div class="item filtered parallax clickable filterLogo" style="background-image: url('p/iam.jpg');" onclick="location.href='cards/iam/identity/index.html'">
+          <div class="itemTag">Айдентика</div>
+          <div class="itemDescription">
+            <h1><a href="cards/iam/identity/index.html" class="linkDark">I'm Production</a>
+            </h1>
+          </div>
+        </div>
+-->
+<img src="s/portfolio-ru.png" id="portfolioHeader" />
+
+<div class="item filtered parallax clickable filterLogo" style="background-image: url('p/portal.jpg');" onclick="location.href='cards/portal/all/index.html'">
+  <div class="itemTag">Сайт и айдентика</div>
+  <div class="itemDescription">
+    <h1><a href="cards/portal/all/index.html">Portal Cargo</a>
+    </h1>
+  </div>
+</div>
+
+
+      <div class="item filtered parallax clickable filterLogo" style="background-image: url('p/samana.jpg');" onclick="location.href='cards/samana/identity/index.html'">
+        <div class="itemTag">Айдентика</div>
+        <div class="itemDescription">
+          <h1><a href="cards/samana/identity/index.html">Samana Festival</a>
+          </h1>
+        </div>
+      </div>
+
+      <div class="item filtered parallax clickable filterLogo" style="background-image: url('p/prostaya.jpg');" onclick="location.href='cards/prostaya/all/index.html'">
+        <div class="itemTag">Редизайн</div>
+        <div class="itemDescription">
+          <h1><a href="cards/prostaya/all/index.html">Простая школа</a>
+          </h1>
+        </div>
+      </div>
+
+      <div class="item filtered parallax clickable filterLogo" style="background-image: url('p/hiken.jpg');" onclick="location.href='cards/hiken/logo/index.html'">
+        <div class="itemTag">Логотип</div>
+        <div class="itemDescription">
+          <h1><a href="cards/hiken/logo/index.html">Хайкен</a>
+          </h1>
+        </div>
+      </div>
+
+      <div class="item filtered parallax clickable filterLogo" style="background-image: url('p/artlikbez.jpg');" onclick="location.href='cards/artlikbez/style/index.html'">
+        <div class="itemTag">ИНСТАГРАМ</div>
+        <div class="itemDescription">
+          <h1><a href="cards/artlikbez/style/index.html">Art.likbez</a>
+          </h1>
+          <p>
+            Дизайн визуальной концепции оформления серий для познавательного канала
+          </p>
+        </div>
+      </div>
+
+
+
+
+      <div class="item filtered parallax clickable filterLogo" style="background-image: url('p/bo.jpg');" onclick="location.href='cards/bo/all/index.html'">
+        <div class="itemTag">Ребрендинг</div>
+        <div class="itemDescription">
+          <h1><a href="cards/bo/all/index.html">Белые Облака</a>
+          </h1>
+        </div>
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+      <div class="item filtered parallax clickable filterLogo" style="background-image: url('p/neohippie.jpg');" onclick="location.href='cards/neohippie/v1/index.html'">
+        <div class="itemTag">Шрифт</div>
+        <div class="itemDescription">
+          <h1><a href="cards/neohippie/v1/index.html">Neo Hippie</a>
+          </h1>
+          <p>
+            Мой первый авторский шрифт с поддержкой английского и русского языка
+          </p>
+        </div>
+      </div>
+
+
+
+      <!-- ОЖ -->
+      <div class="item filtered parallax clickable filterLogo" style="background-image: url('p/ostrov.jpg');" onclick="location.href='cards/ostrov/all/index.html';">
+        <div class="itemTag">Айдентика</div>
+        <div class="itemDescription">
+          <h1 style="margin-left: -54px; color: white;">#<a href="cards/ostrov/all/index.html" class="linkDark">TheOstrov</a></h1>
+          <br /><br />
+          <p id="ostrovText" class="linkDark">Необитаемый остров на Мальдивах. 50&nbsp;успешных бизнесменов. Выживание, коучинг, нетворкинг и&nbsp;дружба.
+            История о том, как мы создали уникальный туристический проект. Логотипы, визуальная концепция и оформление пространства.</p>
+        </div>
+
+      </div>
+
+
+
+
+
+            <div class="item filtered parallax clickable filterLogo" style="background-image: url('p/avtoban_digital.jpg');" onclick="location.href='cards/avtoban_digital/brand/index.html'">
+              <div class="itemTag">АЙДЕНТИКА</div>
+              <div class="itemDescription">
+                <h1><a href="cards/avtoban_digital/brand/index.html">Автобан Диджитал</a>
+                </h1>
+                <p>
+                  Цифровое подразделение крупнейшей российской дорожно-строительной компании
+                </p>
+              </div>
+            </div>
+
+
+
+
+
+
+
+      <div class="item filtered parallax clickable filterLogo colorChange6" style="background-image: url('p/accel.jpg');" onclick="location.href='cards/accel/logo/index.html'">
+        <div class="itemTag">ЛОГОТИП</div>
+        <div class="itemDescription">
+          <h1><a href="cards/accel/logo/index.html">ACCEL</a>
+          </h1>
+          <p>
+            Яркий знак для крупнейшего в России акселератора онлайн-школ
+          </p>
+        </div>
+      </div>
+
+
+      <div class="item filtered parallax clickable filterLogo" style="background-image: url('p/alchemy-portrait.jpg'); " onclick="location.href='cards/alchemy-portrait/logo/index.html'">
+        <div class="itemTag">Логотип</div>
+        <div class="itemDescription">
+
+          <h1><a href="cards/alchemy-portrait/logo/index.html">Алхимический портрет</a>
+          </h1>
+          <p>
+            Стильный и эмоциональный логотип для проекта потрясающего фотографа Валерия Латыпова
+          </p>
+        </div>
+      </div>
+
+      <div class="item filtered parallax clickable filterWeb" style="background-image: url('p/azbuka.jpg'); " onclick="location.href='cards/azbuka/site/index.html'">
+        <div class="itemTag">Лендинг</div>
+        <div class="itemDescription">
+          <h1><a href="cards/azbuka/site/index.html">Азбука Петра Фролова</a>
+          </h1>
+          <p>
+            Живой и динамичный сайт невероятно красивой книги.
+          </p>
+        </div>
+      </div>
+
+
+
+
+
+    </div> <!-- starsky -->
+
+    <div class="projectDescription filtered filterLogo colorChange2" id="anchorWWW">
+      <h2>Сайты</h2>
+      <h3 class="hText">
+        Разные &mdash; от одностраничных &#x1F425; лендингов до кастомных корпоративных &#x1F9A2;<br><br>
+        И приложения &mdash; модные &#x26a1;, строгие &#x1f916;, от шоппинга &#x1f6cd; до нетворкинга &#x1f481;
+      </h3>
+    </div>
+
+
+
+    <div class="item filtered parallax clickable filterLogo" style="background-image: url('p/solit.jpg');" onclick="location.href='cards/solit/www/index.html'">
+      <div class="itemTag">Лендинг</div>
+      <div class="itemDescription">
+        <h1><a href="cards/solit/www/index.html">Solit Clouds</a>
+        </h1>
+        <p>
+          Бодрый корпоративный лендинг для давнего клиента
+        </p>
+      </div>
+    </div>
+
+<!--
+    <div class="item filtered parallax clickable filterLogo" style="background-image: url('p/mybusiness.jpg');" onclick="location.href='cards/mybusiness/all/index.html'">
+    <div class="itemTag">Полиграфия</div>
+    <div class="itemDescription">
+      <h1><a href="cards/mybusiness/all/index.html">Мой Бизнес</a>
+      </h1>
+      <p>
+        Большой буклет и лендинг для государственного сервиса
+      </p>
+    </div>
+  </div>
+-->
+
+
+
+
+
+    <!-- Somatika -->
+    <div class="item itemHalfL filtered clickable filterWeb" style="background-image: url('p/somatika_half.jpg'); " onclick="location.href='cards/somatika/site/index.html'">
+      <div class="itemTag">Сайт</div>
+      <div class="itemDescription">
+        <h1><a href="cards/somatika/site/index.html">Соматика</a>
+        </h1>
+        <p>
+          Легкий и воздушный сайт на тему современной йоги.
+        </p>
+      </div>
+    </div>
+
+
+    <div class="item itemHalfR filtered clickable filterApp filterLogo" style="background-image: url('p/address_app_half.jpg');" onclick="location.href='cards/address/all/index.html'">
+      <div class="itemTag">Приложение</div>
+      <div class="itemDescription">
+        <h1><a href="cards/address/all/index.html">Address</a>
+        </h1>
+        <p>
+          Невероятно модный логотип и дизайнерское приложение для любителей секонд-хендов.
+        </p>
+      </div>
+    </div>
+
+
+
+
+
+    <div class="projectDescription filtered filterLogo colorChange3">
+      <h3 class="hText">
+        <p>Начать можно со звонка &#x1f919;, письма &#x1f48c; или чата &#x270d; &mdash; мы обсудим ваши задачи, затем,
+          при взаимном интересе &#x1f495;, я оцениваю проект &#x1f4b5; и называю точные сроки &#x23f1;, потом договор &#x1f3db;, предоплата &#x1f4b0; и мы начинаем.
+        </p>
+        <p>В телеграме <a href="https://t.me/karachinsky">@karachinsky</a> или по почте &mdash; <a href="mailto:karachinsky@me.com">karachinsky@me.com</a>
+      </h3>
+    </div>
+
+    <div class="item parallax filtered filterWeb" onclick="location.href='cards/lorus/site/index.html';" style="background-image: url('p/lorus.jpg')">
+      <div class="itemTag">Сайт</div>
+      <div class="itemDescription">
+        <h1 style="float: left;"><a href="cards/lorus/site/index.html">Lorus SCM</a>
+        </h1>
+        <p class="linkDark">
+          Корпоративный сайт логистической компании с необычной навигацией
+        </p>
+      </div>
+    </div>
+
+
+
+
+
+
+    <div class="item itemHalfL filtered filterWeb" onclick="location.href='cards/players/logo/index.html';" style="background-image: url('p/players.jpg')">
+      <div class="itemTag">Логотип</div>
+      <div class="itemDescription" class="linkDark">
+        <h1 style="float: left;"><a href="cards/players/logo/index.html">Players & Coaches</a>
+        </h1>
+
+      </div>
+    </div>
+
+    <div class="item itemHalfR filtered filterWeb" onclick="location.href='cards/sanatorium/app/index.html';" style="background-image: url('p/sanatorium.jpg')">
+      <div class="itemTag">Приложение</div>
+      <div class="itemDescription" class="linkDark">
+        <h1 style="float: left;"><a href="cards/sanatorium/app/index.html">Sanatorium</a>
+        </h1>
+
+      </div>
+    </div>
+
+    <div class="item filtered parallax clickable filterWeb" style="background-image: url('p/vershinina.jpg'); background-position: center top;" onclick="location.href='cards/vershinina/site/index.html'">
+      <div class="itemTag">Сайт</div>
+      <div class="itemDescription">
+        <h1><a href="cards/vershinina/site/index.html">Елена Вершинина</a>
+        </h1>
+        <p>
+          Самый длинный лендинг в моей истории!
+        </p>
+      </div>
+    </div>
+
+    <div class="projectDescription filtered filterLogo colorChange4">
+      <h3 class="hText">Разработка сайта обычно занимает &#x231b; <b>от 2 до 8 недель</b>. Первый этап &mdash; это прототип &#x1f331;, далее концепция главной &#x1f337; и внутренней страниц &#x1f33f;, затем верстка &#x1f9d8; и наполнение контентом
+        &#x1f939;
+        <br><br>
+        Я работаю как с <b>Tilda &#x1f31e;, так и создаю кастомные сайты вручную &#x1f316;</b>
+        <br><br>
+        <a href="mailto:karachinsky@me.com">Написать письмо</a>
+        <img src="s/icon-tg.png" class="iconTelegram">
+        <a href="https://t.me/karachinsky">или в телеграм</a>
+      </h3>
+    </div>
+
+
+
+
+
+
+    <div id="anchorLogos" class="projectDescription filtered filterLogo colorChange45">
+      <h2>Логотипы</h2>
+      <h3 class="hText">Задизайнить логотип &mdash; обычно, неделя работы &#x1f680;
+        <br><br>Я подготавливаю презентацию с 5&mdash;7 вариантами &#x1f3a1; и описанием ключевых идей логотипов. Далее у нас есть еще 2 шага: на доработку понравившегося варианта &#x1f36d; или на поиск новых решений &#x1f9ed;
+      </h3>
+    </div>
+
+
+
+
+    <img src="s/logos_welcome.jpg" width="100%" class="logosWelcome">
+
+    <div class="item filtered parallax clickable filterWeb colorChange46" style="background-image: url('p/oj.jpg'); background-position: center top;" onclick="location.href='cards/befit/tender/index.html'">
+      <div class="itemTag">Айдентика</div>
+      <div class="itemDescription">
+        <h1><a href="cards/befit/tender/index.html" class="linkDark">ОЖ</a>
+        </h1>
+        <p class="linkDark">
+          Интереснейшая и в то же время сложнейшая задача&nbsp;&mdash; создание нового имени и логотипа для уже существующего бренда.
+        </p>
+      </div>
+    </div>
+
+    <div class="item filtered parallax clickable filterLogo" style="background-image: url('p/rfg.jpg'); " onclick="location.href='cards/rfg/all/index.html'">
+      <div class="itemTag">Логотип</div>
+      <div class="itemDescription" class="linkDark">
+        <h1 style="float: left;"><a href="cards/rfg/all/index.html" style="border-bottom: 1px solid black;" class="linkDark">RFG</a>
+        </h1>
+        <p class="linkDark">
+          Бренд одежды Retro-Future Generation by Pasha Che
+        </p>
+      </div>
+    </div>
+
+    <div class="item itemHalfL filtered parallax clickable filterLogo" style="background-image: url('p/surya.jpg');" onclick="location.href='cards/surya/logo/index.html'">
+      <div class="itemTag">Логотип</div>
+      <div class="itemDescription" class="linkDark">
+        <h1><a href="cards/surya/logo/index.html" style="border-bottom: 1px solid #323131;" class="linkDark">Сурья-фест</a>
+        </h1>
+        <p class="linkDark">
+          Много ярких концепций для хорошего фестиваля
+        </p>
+      </div>
+
+    </div>
+
+
+    <div class="item itemHalfR parallax filtered filterLogo" style="background-image: url('p/ontheroofs_h.jpg')" onclick="location.href='cards/ontheroofs/all/index.html'">
+      <div class="itemTag">Лого</div>
+
+    </div>
+
+
+    <div class="item filtered parallax clickable filterLogo colorChange5" style="background-image: url('p/162.jpg'); " onclick="location.href='cards/162/logo/index.html'">
+      <div class="itemTag">Айдентика</div>
+      <div class="itemDescription">
+        <h1><a href="cards/162/logo/index.html">1.62</a>
+        </h1>
+        <p>
+          Архивный концепт для бренда косметики из янтаря
+        </p>
+      </div>
+
+    </div>
+
+
+
+
+    <div class="item itemHalfL parallax filtered clickable filterLogo" style="background-image: url('p/human_tuning_half.jpg'); " onclick="location.href='cards/human-tuning/logo/index.html'">
+      <div class="itemTag">Логотип</div>
+      <div class="itemDescription">
+        <h1><a href="cards/human-tuning/logo/index.html">Human Tuning</a>
+        </h1>
+        <p>
+          Логотип сообщества по прокачке личности
+        </p>
+      </div>
+
+    </div>
+
+
+
+
+
+    <div class="item itemHalfR filtered parallax clickable filterPrint" style="background-image: url('p/nuts_half.jpg'); " onclick="location.href='cards/nuts/pack/index.html'">
+      <div class="itemTag">Упаковка</div>
+      <div class="itemDescription">
+        <h1><a href="cards/nuts/pack/index.html">Активи-<br>рованные орехи</a>
+        </h1>
+        <p>
+          Дизайн и иллюстрации для серии вкуснейших орешков от компании «Гринмания»
+        </p>
+      </div>
+    </div>
+
+    <div class="item filtered parallax clickable filterLogo" style="background-image: url('p/creator.jpg');" onclick="location.href='cards/creator/all/index.html'">
+      <div class="itemTag">СТИЛЬ</div>
+      <div class="itemDescription">
+        <h1><a href="cards/creator/all/index.html">Creator</a>
+        </h1>
+        <p>
+          Дизайн-концепция нового мини-альбома WAYVES. Оформление обложки цифрового релиза, сайта и социальных медиа
+        </p>
+      </div>
+    </div>
+
+    <div class="projectDescription filtered filterLogo colorChange4">
+      <h3 class="hText">
+        Дальше, вниз по сайту, будет еще пара десятков логотипов &mdash; Foodfox, в свое время заполонивший Москву и Петербург, ОЖ, с которого началась моя дружба с Димой Юрченко (сооснователем ACCEL), логотипы для сколковских стартапов и ребрендинг
+        для
+        Сергея Полонского.
+      </h3>
+    </div>
+
+
+    <div class="item filtered parallax clickable filterLogo" style="background-image: url('p/chinastraat.jpg');" onclick="location.href='cards/chinastraat/logo/index.html'">
+      <div class="itemTag">АЙДЕНТИКА</div>
+      <div class="itemDescription">
+        <h1><a href="cards/chinastraat/logo/index.html">Chinastraat</a>
+        </h1>
+        <p>
+          Логотип арт-пространства в Бельгии
+        </p>
+      </div>
+    </div>
+
+
+
+
+    <div class="item itemHalfL filterApp filterLogo filtered" style="background-image: url('p/zs_half.jpg'); " onclick="location.href='cards/zs/all/index.html'">
+    </div>
+
+    <div class="item itemHalfR filterLogo filtered" style="background-image: url('p/foodfox_half.jpg'); " onclick="location.href='cards/foodfox/logo/index.html'">
+    </div>
+
+    <!-- WAYVES -->
+    <div class="item filtered parallax clickable filterLogo colorChange7" style="background-image: url('p/wayves.jpg'); " onclick="location.href='cards/wayves/all/index.html'">
+      <div class="itemTag">Айдентика</div>
+      <div class="itemDescription" style="text-shadow: 0px 2px 24px rgba(0,0,0,0.51);">
+        <h1 style="  color: white; display: block; float: left;"><a href="cards/wayves/all/index.html">WAYVES</a>
+        </h1>
+        <p>
+          История эволюции логотипа, фирменного стиля и множество сопутствующей имиджевой графики.
+        </p>
+      </div>
+    </div>
+
+
+
+
+
+    <div class="item itemHalfL filtered parallax clickable filterLogo" style="background-image: url('p/uplus_half.jpg');" onclick="location.href='cards/uplus/logo/index.html'">
+      <div class="itemTag">Логотип</div>
+      <div class="itemDescription">
+        <h1><a href="cards/uplus/logo/index.html">U+</a>
+        </h1>
+        <p>
+          Модный и современный логотип<br> «Открытого университета»
+        </p>
+      </div>
+    </div>
+
+
+
+    <div class="item itemHalfR filtered parallax clickable filterLogo" style="background-image: url('p/digger_half.jpg'); " onclick="location.href='cards/digger/logo/index.html'">
+      <div class="itemTag">Логотип</div>
+      <div class="itemDescription">
+        <h1><a href="cards/digger/logo/index.html">Digger</a>
+        </h1>
+        <p>
+          Ребрендинг одного известного интернет-издания (архивная работа)
+        </p>
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+    <div class="item padFeedback parallax" id="anchorFeedback" style="height: auto;">
+      <div id="fewWords">
+        <h1 style="padding: 0 0 42px 32px; color: #fff; font-size: 2em; font-weight: normal;">Отзывы клиентов<br>и коллег<br /></h1>
+        <div class="mainFeedback">
+          <img src="people/ekaterina-inozemtseva-2.jpg" align="left" id="mainFeedbackPhoto">
+          <div class="mainFeedbackText">
+            <p>
+              «Чего хочет заказчик от исполнителя? Чтобы он задавал как можно меньше вопросов, понимал всё с полуслова и удивлял как можно чаще. Мы все взрослые люди и понимаем, что это невозможно. Однако в жизни есть место чудесам и чудесным людям.
+              Саша определённо умеет создавать чудеса. В общем, ребята, это счастье от совместного творчества и взаимопонимания. От всей души желаю каждому заказчику когда-нибудь встретить своего Пигмалиона!»
+            </p>
+            <p><strong id="feedbackName">&mdash; Екатерина Иноземцева,</strong><br />
+              <a href="http://school.the-oj.ru/" target="_blank">Школа Авторов «ОЖ»</a>, спикер TEDx,
+              автор книги «Стартап без купюр», колумнист Forbes и Psychologies
+            </p>
+          </div>
+        </div>
+        <div class="mainFeedback">
+          <img src="people/anya-mozaykina.png" align="left" id="mainFeedbackPhoto">
+          <div class="mainFeedbackText">
+            <p>
+              «Хоть мы и работали совсем недолго, работать с тобой легко, приятно и комфортно.
+              Мне нравилось как ты быстро понимаешь задачу, что в наше время редкость.
+              Скорость и качество исполнения приносили миллион лучиков счастья.
+              Как-то так. Один из немногих, про которых можно сказать «Жаль, что ушел...»
+            </p>
+            <p><strong id="feedbackName">&mdash; Анна Мазайкина,</strong><br />
+              <a href="http://artlebedev.ru/" target="_blank">Студия Артемия Лебедева</a>
+            </p>
+          </div>
+        </div>
+        <div class="mainFeedback" style="clear: both;">
+          <img src="people/pasha-petrov.jpg" align="left" id="mainFeedbackPhoto">
+          <div class="mainFeedbackText">
+            <p>
+              «Помимо идеально и профессионально выполненной работы, я узнал чем настоящий дизайнер отличается от иллюстратора, а гармония от красоты. Теперь знаю, что невозможное возможно &mdash; чувства, эмоции и ощущения можно визуализировать.
+              Наше
+              сотрудничество переросло в дружбу, чему я невероятно рад. Как и тому, что мне теперь не нужно выбирать дизайнера для своих идей. Мой выбор очевиден и безальтернативен».
+            </p>
+            <strong id="feedbackName">&mdash; Павел Петров</strong><br />
+            IdeMind, <a href="http://www.0state.com" target="_blank">ZeroState</a>
+          </div>
+        </div>
+        <div class="mainFeedback">
+          <img src="people/maxim-kolpakov.jpg" align="left" id="mainFeedbackPhoto">
+          <div class="mainFeedbackText">
+            <p>
+              «Работать с Сашей интересно и приятно. Интересно, потому что Саша выполняет с одной стороны творчески, а с другой стороны в той "тональности", о которой договорились изначально.
+              А приятно работать, потому что Саша называет реальные сроки готовности работы &mdash; и выдерживает их. Что в отрасли большая редкость».
+            </p>
+            <strong id="feedbackName">&mdash; Максим Колпаков</strong><br />
+            <a href="http://www.rnrdom.ru/" target="_blank">РНР</a>
+          </div>
+        </div>
+        <div class="mainFeedback" style="clear: both;">
+          <img src="people/ksenia-chabanenko.png" align="left" id="mainFeedbackPhoto">
+          <div class="mainFeedbackText">
+            <p>
+              «За время нашего сотрудничества в работе над видео и дизайн-макетами Александр
+              зарекомендовал себя как очень ответственный и оперативный партнер,
+              что особенно важно при решении срочных рабочих задач».
+            </p>
+            <strong id="feedbackName">&mdash; Ксения Чабаненко</strong><br />
+            Коммуникационное агентство «<a href="http://www.a-tak.ru/" target="_blank">А-Так</a>»
+          </div>
+        </div>
+        <div class="mainFeedback">
+          <img src="people/marina-gorbunova.png" align="left" id="mainFeedbackPhoto">
+          <div class="mainFeedbackText">
+            <p>
+              «Часто бывает, что на уровне эмоций ты знаешь, что хочешь в результате, но понятия не имеешь, как это передать словами или графически. Саша умеет выслушать, направить и найти решение. Вдруг ты видишь, что твоя идея приобрела смысл,
+              очертания, цвет, стиль и вызывает именно те эмоции, которые и задумывались. А еще Саша видит то, что не видишь ты, поэтому порой ответы приходят раньше, чем вопросы. Мы очень довольны результатом!»
+            </p>
+            <strong id="feedbackName">&mdash; Марина Горбунова</strong><br />
+            Co-Founder @ <a href="cards/address/all/index.html">Address App</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="projectDescription filtered filterLogo colorChange8">
+      <h3 class="hText">
+        Вы все глубже погружаетесь &#x1f433; в прошлое &mdash; ниже следует серия логотипов разработанных с 2013 &#x1f421; по 2018 годы &#x1f995;
+      </h3>
+    </div>
+
+    <div class="blockLogotypes filtered filterLogo">
+
+      <div class="logoContainerActive">
+        <img src="p/logos/mansion.png" id="logoImg" onclick="location.href='cards/mansion/logo/index.html';" />
+        <div class="logoAbout">
+          Фитнес-клуб в особняке<br />
+          Строго и солидно<br />
+          <div id="logoCategory">логотип</div>
+        </div>
+      </div>
+
+      <div class="logoContainerActive">
+        <img src="p/logos/nelo.png" id="logoImg" onclick="location.href='cards/nelo/logo/index.html';" />
+        <div class="logoAbout">
+          Логистическая компания<br />
+          Смело и нескучно<br />
+          <div id="logoCategory">логотип</div>
+        </div>
+      </div>
+
+      <div class="logoContainerActive" onclick="location.href='cards/network/all/index.html';" />
+      <img src="p/logos/network.png" id="logoImg" />
+      <div class="logoAbout">
+        Сеть бизнес-контактов из <strong>Сколково</strong><br />
+        Абстрактная айдентика<br />
+        <div id="logoCategory">консалтинг</div>
+        <div id="logoCategory">нейминг</div>
+        <div id="logoCategory">дизайн</div>
+      </div>
+    </div>
+
+
+
+    <div class="logoContainerActive" onclick="location.href='cards/simplesystems/all/index.html';">
+      <img src="p/logos/simplesystems.png" id="logoImg" />
+      <div class="logoAbout">
+        Простые решения<br />
+        <div id="logoCategory">консалтинг</div>
+        <div id="logoCategory">дизайн</div>
+      </div>
+    </div>
+
+    <div class="logoContainerActive " onclick="location.href='cards/logus/all/index.html';">
+      <img src="p/logos/logus.png" id="logoImg" />
+      <div class="logoAbout">
+        Система управления отелями<br />
+        <div id="logoCategory">лого</div>
+        <div id="logoCategory">лендинг</div>
+      </div>
+    </div>
+    <div class="logoContainerActive">
+      <img src="p/logos/mosevent.png" id="logoImg" onclick="location.href='cards/mosevent/logo/index.html';" />
+      <div class="logoAbout">
+        Эвент-агентство<br />
+        Абстрактная айдентика. Конструктор.<br />
+        <div id="logoCategory">консалтинг</div>
+        <div id="logoCategory">дизайн</div>
+      </div>
+    </div>
+    <div class="logoContainerActive">
+      <img src="p/logos/alun.png" id="logoImg" onclick="location.href='cards/alun/logo/index.html';" />
+      <div class="logoAbout">
+        Союз выпускников «Сколково»<br />
+        Консервативно и аккуратно<br />
+        <div id="logoCategory">логотип</div>
+      </div>
+    </div>
+    <div class="logoContainerActive">
+      <img src="p/logos/yarrco.png" id="logoImg" onclick="location.href='cards/yarrco/logo/index.html';" />
+      <div class="logoAbout">
+        Ярко и охуенно<br />
+        Гелиоцентризм, эгоцентризм. <br />
+        <div id="logoCategory">консалтинг</div>
+        <div id="logoCategory">нейминг</div>
+        <div id="logoCategory">дизайн</div>
+      </div>
+    </div>
+    <div class="logoContainerActive">
+      <img src="p/logos/avatar.png" id="logoImg" onclick="location.href='cards/avatar/logo/index.html';" />
+      <div class="logoAbout">
+        Потоковое видео. Проект Сергея Полонского. <br />
+        Символ земли, перевернутая «А».<br />
+        <div id="logoCategory">дизайн</div>
+      </div>
+    </div>
+    <div class="logoContainerActive" onclick="location.href='cards/czech-chandelier/logo/index.html';">
+      <img src="p/logos/czek.png" id="logoImg" />
+      <div class="logoAbout">
+        Настоящие чешские люстры<br />
+        <div id="logoCategory">консалтинг</div>
+        <div id="logoCategory">дизайн</div>
+      </div>
+    </div>
+    <div class="logoContainerActive">
+      <img src="p/logos/breezik-1.png" id="logoImg" onclick="location.href='cards/breezik/logo/index.html';" />
+      <div class="logoAbout">
+        Итальянский дэйтинг<br />
+        Купидон, общение, любовь<br />
+        <br />
+        <div id="logoCategory">дизайн</div>
+      </div>
+    </div>
+    <div class="logoContainerActive">
+      <img src="p/logos/ciaoamo-1.png" id="logoImg" onclick="location.href='cards/ciaoamo/logo/index.html';" />
+      <div class="logoAbout">
+        Еще один итальянский дэйтинг<br />
+        Олдскул-тату, модно-молодежно<br />
+        <div id="logoCategory">дизайн</div>
+      </div>
+    </div>
+    <div class="logoContainerActive">
+      <img src="p/logos/lendnest.png" id="logoImg" onclick="location.href='cards/lendnest/logo/index.html';" />
+      <div class="logoAbout">
+        Сервис для одалживания денег<br />
+        Абстракция + «гнездо» из названия<br />
+        <div id="logoCategory">консалтинг</div>
+        <div id="logoCategory">дизайн</div>
+      </div>
+    </div>
+    <div class="logoContainerActive" onclick="location.href='cards/procket/logo/index.html';">
+      <img src="p/logos/procket.png" id="logoImg" />
+      <div class="logoAbout">
+        <strong>Покет Рокет</strong>&nbsp;&mdash;<br />
+        <a href="http://procket.ru/" target="_blank">мобайл-девелопмент</a> тим<br />
+        <div id="logoCategory">консалтинг</div>
+        <div id="logoCategory">нейминг</div>
+        <div id="logoCategory">дизайн</div>
+      </div>
+    </div>
+    <div class="logoContainerActive" onclick="location.href='cards/potok/logo/index.html';">
+      <img src="p/logos/potok.png" id="logoImg" />
+      <div class="logoAbout">
+        <strong>Поток-Бесконечность</strong><br />
+        &nbsp;&mdash; Нужна пластика, будто в воздухе рукой <br />
+        рисуешь, — Полонский<br />
+        <div id="logoCategory">редизайн</div>
+      </div>
+    </div>
+  </div>
+  </div>
+
+
+  <div class="projectDescription filtered filterLogo colorChange9">
+    <h3 class="hText">
+      <p>Вот и всё &mdash; конец &#x1f973; &#x1f388;
+        <br>Вы добрались до самого низа этого немаленького так-то сайта &#x1f64c;
+      </p>
+      <p>Но у меня ещё есть совсем <a href="archive.html">давние архивы</a> &#x1f9d0;
+      </p>
+    </h3>
+  </div>
+
+
+  <div class="item itemHalfL filtered parallax clickable filterLogo" style="background-image: url('s/old.jpg');" onclick="location.href='archive.html'">
+
+    <div class="itemDescription">
+      <h1><a href="archive.html">Архивы</a>
+      </h1>
+    </div>
+  </div>
+
+
+
+  <div class="item itemHalfR filtered parallax clickable filterLogo" style="background-image: url('s/fb.jpg');" onclick="location.href='https://facebook.com/sashakarachinsky'">
+    <div class="itemDescription">
+      <h1><a href="https://facebook.com/sashakarachinsky">Фэйсбук</a>
+      </h1>
+    </div>
+  </div>
+
+
+
+  <div class="projectDescription filtered filterLogo">
+    <h3 class="hText">
+      <p>
+      </p>
+    </h3>
+
+
+    <h2>Контакты</h2>
+    <h3 class="hText">
+
+      <p>
+        <a href="mailto:karachinsky@me.com">karachinsky@me.com</a><br><br>
+        <img src="s/icon-tg.png" class="iconTelegram">
+        Телеграм <a href="https://t.me/karachinsky">@karachinsky</a>
+      </p>
+
+    </h3>
+  </div>
+
+
+  </div>
+  <!--canvas end-->
+</body>
+
+</html>

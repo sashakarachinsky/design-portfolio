@@ -1,0 +1,338 @@
+@media screen and (max-device-width: 640px) {
+
+:root {
+    --globalPadding: 4%;
+  }
+
+
+.atMargin {margin: 0 2px 0 0; opacity: 0.6}
+
+.videoOverlay {display: none;}
+
+.padPlay {
+  display: none;
+}
+
+.bottomGlow {display: none;}
+
+#postWelcome {
+  display: none;
+}
+
+
+.iconTelegram {width: 50px; margin: 0 0 -0.1em -1.3em; display: none;}
+
+.padFeedback {padding-bottom: 25%!important;}
+
+.contactLink {
+  float: left !important;
+  clear: both !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+#zeroFuckedPad {
+  display: none;
+}
+
+.parallax {
+  background-size: cover;
+  background-position: top right;
+  background-size: 150%;
+}
+
+#padGeo {
+  transition: all ease 800ms;
+  display: none;
+}
+
+.btnCTA {
+  display: none;
+}
+
+
+.welcome-contacts {
+  margin: 0; padding: 0;
+  right: auto;
+  width: 80vw;
+  top: 20vh;
+  display: block;
+  float: left;
+}
+
+
+#logoTop {
+  transition: width 300ms;
+  width: 70vw;
+  padding: 7vh 0 4vw 5vw;
+}
+
+#portfolioHeader {
+  transition: width 300ms;
+  width: 70vw;
+  padding: 6px 0% 5% 10%;
+  float: left;
+  margin: 5% 0 0 0;
+}
+
+
+
+.itemTag {display: none;}
+
+.block_prtfl_top_left, .block_prtfl_top_right {display: none;}
+
+.welcome-column-one {
+  width: calc(90% - var(--globalPadding)*2);
+  margin: 2vh 6vw 12vw 6vw;
+  font-size: 1.6em!important;
+}
+
+.welcome {
+  background-position: 75% top;
+  background-size: 350%;
+
+
+  box-shadow: inset 0 -100vh 666px -312px #000000;
+
+  padding: 0 0 86px var(--globalPadding);
+  float: left;
+  font-size: 1.5em;
+  line-height: normal;
+  margin: 0;
+
+}
+
+.welcome-logo {margin: 40vh 0 0 0%;}
+
+.btnEnglish {
+  display: none;
+}
+
+.btnEnglishMobile {
+  display: block;
+  zoom: 150%;
+  float: left;
+  width: 100%;
+  margin-top: 1vh;
+  padding: 0vh 0 4vh 25vw;
+  color: white!important;
+}
+
+
+.btnEnglish {
+  display: none;
+}
+
+.btnEnglishMobile {
+  display: block;
+  zoom: 150%;
+  float: left;
+  width: 100%;
+  padding: 0vh 0 4vh 4vw;
+  color: white!important;
+}
+
+.contactsIcon {
+  display: none;
+}
+
+.welcome-pad {
+  padding: 0;
+}
+
+.padFeedback {
+  background-size: cover;
+}
+
+.serviceColumns {
+  display: none;
+}
+
+.hText {
+  width: 100%;
+  font-weight: 400!important;
+  font-size: 2em;
+}
+
+h1 {
+  font-size: 0.7em;
+}
+
+h2 {
+  margin: 32px 0 124px 0;
+  font-size: 12vw;
+
+  padding: 0;
+  line-height: 1em;
+}
+
+
+.itemDescription {
+  width: 75%;
+
+  font-size: 5em !important;
+  font-weight: 100!important;
+  bottom: -1%;
+  padding-left: 10%;
+}
+
+.itemDescription h1 {
+  font-size: 0.7em !important;
+  background-color: none;
+  font-weight: bold;
+  text-shadow: 4px 4px 32px rgba(0,0,0,0.3);
+}
+
+.itemDescription a {
+  background-color: rgba(0, 0, 0, 0.7)
+    font-weight: 100!important;
+}
+
+.itemDescription p {
+  display: none;
+}
+
+.mainFeedback {
+  width: 110%;
+}
+
+.mainFeedbackText {padding: 0 0 0 0!important; width: 100%;}
+
+#mainFeedbackPhoto {
+  width: 500px!important;
+  margin-top: 20%!important;
+  clip-path: circle(250px at center);
+  -webkit-clip-path: circle(250px at center);
+  }
+
+#projectDescriptionTwo {
+  width: 100%;
+  padding: 0px;
+  padding: auto var(--globalPadding);
+}
+
+/* mob */
+.logoContainerActive, .logoContainer {
+  width:  calc(90% - var(--globalPadding)*2);
+  font-size: 3em;
+  line-height: 1.2em;
+  margin: 4% 0 4% 4%;
+  padding: 4% 6% 14% 6%;
+  border-radius: 32px!important;
+  box-shadow: 0 32px 164px rgba(0,0,0,0.05)!important;
+
+}
+
+.linkDark {
+  color: white !important;
+}
+
+.projectDescription {
+  width: 80%;
+  padding: 8% 10% 10% 10%!important;
+
+}
+
+.blockLogotypes {padding: var(--globalPadding); margin: 0; background-color: #d4bda8; border-radius: 32px;}
+
+#feedbackName {
+  margin-left: -40px;
+  font-weight: 800;
+}
+
+.btnMail {display: none;}
+
+.item {
+  margin: 5vw 0 0 5vw;
+  transform: scale(1) !important;
+  width: 90vw;
+
+  height: 35vh !important;
+  background-size: 150% auto;
+  background-position: 50% 50%;
+  border-radius: 32px!important;
+  box-shadow: inset 0px -272px 174px -172px rgba(11,11,11,0.8)!important;
+}
+
+.logoAnimated {display: none; position: absolute!important; left: 3vw!important; top: 4vh!important; width: 10vh!important;}
+
+.logoSpace {overflow: hidden; height: 1px!important; margin: 1px!important; padding: 1px!important;}
+.logoAnimatedText {overflow: hidden; height: 1px!important; margin: 1px!important; padding: 1px!important;}
+.logosWelcome {display: none;}
+
+.item:hover {
+  transform: scale(1) !important;
+
+  background-size: cover;
+background-position: center center;
+border-radius: auto;}
+
+.itemHalf, .itemHalfL, .itemHalfR {
+  background-size: cover!important;
+  background-position: center!important;
+}
+
+
+.padFeedback {
+  height: auto !important;
+  font-size: 2em;
+  background-size: cover!important;
+}
+
+.logoOstrov {
+  width: 90%;
+  margin: 0;
+  padding: 5% 5% 0 5%;
+  background-color: #f6f4f0 !important;
+}
+
+.logoOstrovImg {width: 50%!important;}
+
+.ostrovText {
+  display: none;
+}
+
+#it-ostrov {
+  background-color: #f6f4f0 !important;
+}
+
+.logo {
+  display: none;
+}
+
+.logoAbout {height: auto!important; padding: 0 0 12% 0;}
+
+.logoCategory {padding-bottom: 4%;}
+
+
+
+.logo2020 {
+  position: absolute;
+  width: 30vw;
+  left: var(globalPadding);
+  top: 20vh;
+}
+
+.menuLeft {
+  left: -999px;
+}
+
+.progressbar {
+  display: none;
+}
+
+.blogLink {
+  width: calc(90% - var(--globalPadding)*2);
+  height: 3vh;
+  font-size: 1.6em;
+  text-align: center;
+  margin: 0 0 0 5%;
+  border-radius: 124px!important;
+  padding: 42px;
+  text-transform: none;
+  letter-spacing: normal;
+}
+
+.starsky {float: none!important;}
+
+}

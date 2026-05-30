@@ -1,0 +1,647 @@
+@import "inner-mobile.css";
+
+
+.logoProstaya {mix-blend-mode: multiply; width: 33%; padding: 5% 33%;}
+
+
+/* Кнопка Назад */
+#backButton {
+  opacity: 1;
+  cursor: pointer;
+  position: fixed;
+  width: 64px;
+  height: 64px;
+  overflow: hiden;
+  z-index: 999;
+  top: 20px;
+  left: 12px;
+  text-align: left;
+  padding: 0px;
+}
+
+#backButton:hover {
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+#backButton a:link {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 200;
+  border-bottom: none;
+  background-color: transparent;
+}
+
+#backButton a:visited {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 200;
+  border-bottom: none;
+  background-color: transparent;
+}
+
+#backButton a:hover {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 200;
+  border-bottom: none;
+}
+
+#back {
+  width: 72px;
+}
+
+/* */
+/* Кнопка Назад Белая */
+#backButtonWhite {
+  transition: opacity 500ms;
+  cursor: pointer;
+  position: fixed;
+  width: 64px;
+  height: 64px;
+  overflow: hiden;
+  z-index: 999;
+  top: 20px;
+  left: 12px;
+  text-align: left;
+  padding: 0px;
+  opacity: 1;
+}
+
+#backButtonWhite:hover {
+  transition: opacity 200ms;
+  opacity: 0.5;
+}
+
+#backButtonWhite a:link {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 200;
+  border-bottom: none;
+  background-color: transparent;
+}
+
+#backButtonWhite a:visited {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 200;
+  border-bottom: none;
+  background-color: transparent;
+}
+
+#backButtonWhite a:hover {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 200;
+  border-bottom: none;
+}
+
+/*  Карточка проекта  */
+.innerNewHeader {
+  width: 100%;
+  height: 300px;
+  background: url('../cards/ostrov/all/island.jpg') no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  margin: 0 auto 0 auto;
+}
+
+#innerNewHeaderText {
+  width: 60%;
+  margin: 0 auto 0 auto;
+  text-align: left;
+  padding-top: 130px;
+}
+
+#innerNewHeaderText h2 {
+  color: black;
+}
+
+body {
+  font-family: 'Commissioner', sans-serif;
+  line-height: 1.6em;
+}
+
+h1 {
+  font-size: 2em;
+  font-weight: 100;
+  display: block;
+  margin-bottom: 12px;
+  color: black;
+}
+
+h2 {
+  font-size: 1em;
+  font-weight: 100;
+  padding: 0px 0px 16px 0px;
+  color: grey;
+}
+
+h3 {
+  line-height: 1.2em;
+}
+
+a:link {
+  color: #c38a52;
+  border-bottom: 1px solid #c38a52;
+}
+
+a:visited {
+  color: #e6a565;
+  border-bottom: 1px solid #e6a565;
+}
+
+a:hover {
+  border: none;
+}
+
+#canvasGrey {
+  background-color: #f7f4ef;
+  width: 100%;
+  height: 100%;
+  padding: 32px 0 32px 0;
+}
+
+#canvasProject {
+  width: 100%;
+  background-color: white;
+  position: relative;
+  top: 0px;
+  overflow: hidden;
+  padding-top: 110px;
+  text-align: center;
+}
+
+#canvasContainer {
+  width: 60%;
+  margin: 0 auto 0 auto;
+  text-align: left;
+}
+
+#canvasProjectNew {
+  width: 100%;
+  background-color: white;
+  position: relative;
+  top: 0px;
+  overflow: hidden;
+  padding-top: 110px;
+  text-align: center;
+  float: left;
+}
+
+#canvasContainerNew {
+  width: 100%;
+  margin: 0 auto 0 auto;
+  text-align: left;
+}
+
+#innerTextBlock {
+  width: 60%;
+  margin: 0 20% 0 20%;
+}
+
+#innerTextBlockCenter {
+  width: 60%;
+  margin: 0 20% 0 20%;
+  text-align: center;
+}
+
+#innerTextBlockCenter a {
+  transition: all ease 200ms;
+  color: #c38a52 !important;
+  border-bottom: 1px solid #c38a52 !important;
+}
+
+#innerTextBlockCenter a:visited {
+  transition: all ease 200ms;
+  color: #c38a52 !important;
+  border-bottom: 1px solid #c38a52 !important;
+}
+
+#innerTextBlockCenter a:hover {
+  transition: all ease 200ms;
+  color: #e6a565 !important;
+  border-bottom: 1px solid #e6a565 !important;
+}
+
+.filter_link {
+  border: none !important;
+}
+
+.topOfTheWorld {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#leftColumn {
+  width: 40%;
+  padding-right: 8%;
+  float: left;
+}
+
+.prjName {
+  margin: -78px 0 32px 128px;
+  color: black;
+  font-size: 2.6em;
+  display: inline;
+  float: left;
+  padding: 8px 24px 8px 24px;
+  width: 40%;
+  z-index: 2;
+  line-height: 1.1em;
+}
+
+#imgTopComment {
+  background-color: white;
+  padding: 132px 32px 64px 32px;
+  margin: -132px 0 48px -32px;
+  font-size: 0.8em;
+}
+
+#projectImg {
+  width: 100%;
+  padding: 16px 0px 64px 0px;
+}
+
+#projectImgWhite {
+  display: block;
+  width: 100%;
+  background-color: none;
+  margin: 64px 0px 64px 0px
+}
+
+#projectImgTop {
+  display: block;
+  float: left;
+  width: 100%;
+  background-color: none;
+  margin: -128px 0px 64px 0px
+}
+
+#projectImgGrey {
+  display: block;
+  width: 100%;
+  background-color: #f5f4f3;
+  margin: 64px 0px 64px 0px
+}
+
+#daList {
+  line-height: 2em;
+  margin: 12px 0 0 0;
+}
+
+#projectLink {
+  display: inline;
+  right: 0px;
+}
+
+strong {
+  font-weight: 700;
+}
+
+#specs {
+  clear: both;
+  font-size: 0.8em;
+  background-color: #fafaf9;
+  padding: 32px;
+  margin-top: 32px;
+  border-left: 1px solid #ccc;
+}
+
+/*  Отзывы  */
+#opinionPhoto {
+  width: 100%;
+}
+
+#mainOpinionPhoto, #mainFeedbackPhoto {
+  width: 200px;
+  margin: 4%;
+  clip-path: circle(100px at center);
+  -webkit-clip-path: circle(100px at center);
+}
+
+.opinionPhotoContainer {
+  float: left;
+  width: 20%;
+  padding-right: 5%;
+}
+
+.opinionText {
+  float: left;
+  font-size: 1em;
+  width: 75%;
+}
+
+#firstItemSpacer {
+  height: 64px;
+}
+
+.projectNote {
+  position: absolute;
+  margin-left: 62%;
+  margin-top: 16px;
+  width: 16%;
+  font-size: 0.7em;
+}
+
+.opinionInner {
+  margin: 32px 0px 32px 0px;
+  float: left;
+}
+
+.opinionInnerNew {
+  margin: 96px 0px 32px 0px;
+  float: left;
+  width: 80%;
+  padding: 0 10% 0 10%;
+}
+
+/* Лайкли */
+.likely {
+  width: 100%;
+  padding-top: 32px;
+  border-top: 1px solid #eee;
+  margin: 32px 0 0 0;
+}
+
+#likelyCenter {
+  margin: 32px 0 0 0;
+  text-align: center;
+  border-top: 0px solid #ccc;
+}
+
+  .mainOpinion {width: 64%; padding: 0 18% 0 18%}
+
+/*  Мой логотип внутри  */
+.btnInnerMail {
+  transition: opacity 400ms;
+  position: fixed;
+  right: 32px;
+  top: 12px;
+  z-index: 2000;
+  background-color: rgba(0, 0, 0, 0);
+  border: 0;
+}
+
+.btnInnerMail img {
+  width: 36px;
+}
+
+.btnInnerMail a:link {
+  background: none;
+  border: none;
+  text-decoration: none;
+}
+
+.btnInnerMail:hover {
+  transition: opacity 200ms;
+  opacity: 0.6;
+}
+
+#innerLogoBottom {
+  display: block;
+  width: 172px;
+  padding: 0 0 0 0;
+
+}
+
+/*  Футер  */
+.footer {
+  font-size: 0.96em;
+  line-height: 1.8;
+  display: block;
+}
+
+.footerDark {
+  color: #eee;
+  background-color: #212121;
+  font-size: 0.96em;
+  line-height: 1.8;
+}
+
+.footerDark a {
+  color: white !important;
+  border-bottom: 1px solid white !important;
+}
+
+.footerDark a:visited {
+  color: white !important;
+  border-bottom: 1px solid white !important;
+}
+
+.copyleft {
+  font-size: 0.8em;
+  width: inherit;
+  float: left;
+  text-align: left;
+  padding: 64px 0px 64px 0px;
+}
+
+.copyright {
+  text-align: right;
+  font-size: 0.8em;
+  width: 30%;
+  float: right;
+  padding: 64px 0px 64px 0px;
+}
+
+.copyPunct {
+  margin-left: -16px;
+}
+
+iframe {
+  padding: 48px 0px 48px 0px
+}
+
+.btnBack {
+  position: fixed;
+  transition: all ease 400ms;
+  top: 35vh;
+  padding-left: 18px;
+  width: 118px;
+  height: 118px;
+  transform-origin: 50% 50%;
+  z-index: 9999;
+  background-image: url('../s/btn_back_white.png');
+  background-size: 90%;
+  background-repeat: no-repeat;
+}
+
+.btnBack:hover {
+  background-position: -120% 0%;
+  opacity: 1;
+  transition: all ease 200ms;
+  cursor: poiner !important;
+  height: 256px;
+}
+
+.btnFwd {
+  position: fixed;
+  transition: all ease 400ms;
+  top: 35vh;
+  right: 0;
+  padding-right: 32px;
+  width: 86px;
+  height: 118px;
+  transform-origin: 50% 50%;
+  z-index: 9999;
+  background-image: url('../s/btn_back_white.png');
+  background-size: 90%;
+  background-repeat: no-repeat;
+  transform: rotate(180deg);
+
+}
+
+.btnFwd:hover {
+  background-position: -120% 0%;
+  opacity: 1;
+  transition: all ease 200ms;
+  cursor: poiner !important;
+}
+
+.btnBack p {padding: 16px; text-align: left; font-size: 1.3vw; line-height: 1.4em; width: 150%; margin-top: 10vh; color: white; opacity: 0; transition: all ease 400ms;}
+
+.btnFwd p {transform: rotate(180deg); padding: 16px; text-align: left; font-size: 1.3vw; line-height: 1.4em; width: 150%; margin-top: -5vh; color: white; opacity: 0; transition: all ease 400ms;}
+
+.btnBack:hover p {padding-left: 100px; transition: all ease 400ms; opacity: 1;}
+
+.btnFwd:hover p {padding-right: 100px; transition: all ease 400ms; opacity: 1;}
+
+ a:hover p {opacity: 1;}
+
+
+.btnBackBlackArrow {
+  background-image: url('../s/btn_back_black.png');
+}
+
+.bottomPrjLink {
+  font-size: 2em;
+  transition: color 400ms;
+  color: black;
+  text-decoration: none;
+  font-weight: 400;
+  border-bottom: none;
+  color: white;
+}
+
+.videoPlayer {
+  float: left;
+  width: 90%;
+  padding: 82px 5% 82px 5%;
+  margin-top: -54px;
+  overflow: hidden;
+}
+
+
+
+@media screen and (max-device-width: 640px) {
+  .logoAnimated {
+    width: 20vw;
+    margin: 4vw 0 0 4vw;
+    left: auto;
+    right: 4vw;
+  }
+
+  .logoAnimated::before {
+    background-color: red;
+  }
+
+  .btnBack {
+
+  }
+
+
+
+  .btnMail {
+    display: none;
+  }
+
+  .menuLeft {
+    top: -100px;
+
+
+  }
+
+  .prjName {
+    line-height: 1.2em !important;
+  }
+
+  #innerTextBlock, #innerTextBlockCenter {
+    margin: 4% 13% 0% 10%!important;
+    width: 69%;
+    padding: 0!important;
+    line-height: 1.6em!important;
+
+  }
+
+  #innerTextBlockCenter h1 {padding: 0!important;}
+
+  #canvasContainer {
+    margin: 4% 13% !important;
+    width: 69% !important;
+    padding: 0 !important;
+    line-height: 1.6em!important;
+
+  }
+
+  #canvasContainer .copyleft,   #canvasContainer .copyright {
+    transform-origin: 0% 0%;
+    transform: scale(1.5)!important;}
+
+  p, #specs {line-height: 1.6em!important; }
+
+  #innerLogoBottom {
+    display: none;
+  }
+
+  .copyleft, .copyright {
+    text-align: left !important;
+    background: none !important;
+    margin: 32px 0 0 0 !important;
+
+    padding: 32px 0 0 0 !important;
+    width: 80%;
+    clear: both;
+    line-height: 1.4em;
+  }
+
+  .copyleft {margin-top: 20%!important; margin-bottom: 25%!important;}
+  .copyright {margin-bottom: 25%!important;}
+
+  #imgTopComment {
+    margin-top: -10vh !important;
+  }
+
+  .bottomPrjLink {
+    width: inherit !important;
+  }
+
+  h3 {
+    font-size: 8vw;
+  }
+
+  #mainOpinionPhoto {width: 50%!important; margin-right: 50%;
+    clip-path: circle(50% at center);
+    -webkit-clip-path: circle(50% at center);
+    clear: both; margin-bottom: 64px;}
+
+  .mainOpinion {width: 74%; padding: 0 18% 0 13%}
+
+  #opinionPhoto {width: 100%!important; clear: both!important; margin-top: 20%!important;}
+
+  .opinionPhotoContainer {
+    width: 50% !important;
+    clear: both !important;
+    margin: 0 0 0 4vw !important;
+    padding: 0 0 72px 0 !important;
+  }
+
+  .opinionText {
+    margin: 0 0 0 0 !important;
+    padding: 0 0 0 0 !important;
+    width: 90% !important;
+  }
+}

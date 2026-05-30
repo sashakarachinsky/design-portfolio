@@ -1,0 +1,501 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:fb="http://ogp.me/ns/fb#">
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta property="og:type"  content="website" />
+<meta property="og:image" content="s/fb_preview.jpg" />
+<meta property="og:title" content="Cajon Majon —  an amazing new percussion instrument!" />
+<meta property="og:description" content="Uniquely inspired by Peruvian native instruments, we decided to create something special – a brand new drumpad that you сan take anywhere with you. But small size doesn't meen small sound." />
+
+<link href="fashion.css" rel="stylesheet" type="text/css" />
+
+
+
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery-3.2.1.min.js"></script>
+<script src="js/sending/sending.js"></script>
+
+<title>CAJON MAJON</title>
+<link rel="icon" type="image/png" href="favicon.png" />
+
+
+</head>
+
+<body id="toppestTop">
+
+
+<div class="padContact" id="frame-sim">
+	<div class="padFields">
+		<div class="frm-container">
+        
+			<div class="frm-item">
+				<label id="labelCajonType" style="display: block; font-size: 2em; margin: -22px 0 42px 4px;">
+					Cajon Type
+				</label>
+			</div>
+            
+            <div class="frm-item">
+				<div class="frm-label">
+					Your Name:
+				</div>
+				<div class="frm-input">
+					<input type="text" id="frame-sim-name" >
+				</div>
+			</div>
+			<div class="frm-item">
+				<div class="frm-label">
+					Address <br />
+					<sup>(ex.: USA, California, Beach st., bld. 12, apt. 2)</sup>
+				</div>
+				<div class="frm-input">
+					<input type="text" id="frame-sim-address" >
+				</div>
+			</div>
+            <div class="frm-item">
+				<div class="frm-label">
+					Any comments here.<br />
+                    <sup>Should we know something special?</sup>
+				</div>
+				<div class="frm-input">
+					<input type="text" id="frame-sim-comm" >
+				</div>
+			</div>
+			<div class="frm-item">
+				<div class="frm-label">
+					E-mail:
+				</div>
+				<div class="frm-input">
+					<input type="text" id="frame-sim-email" onkeyup="CheckEmail();" onChange="CheckEmail();" >
+				</div>
+			</div>
+	             
+            </div>
+            
+            <div class="frm-buy-info">
+            <h2>Instructions</h2>
+            <p>
+            <strong>Buying cajon is an amazing decision.</strong>
+            </p>
+            <p>
+            1. Now we need some info about you: a name, address and so on.
+            </p>
+            
+            <p>
+            2. Than we'll get an e-mail with your info and you'll beredirected to PayPal service. You can pay with a card, <strong>you do not need</strong> a PayPal account.
+            </p>
+            <p>
+            3. In 24 hours we'll reply you to confir our deal. Than we'll send a tracking number of your box, so you'll be able to track your Cajon until you'll finally get it.
+            </p>
+            <p>
+            4. Please, as you unpack it and enjoy first rythms, send us a photo of you and a Cajon. Selfie is ok. It'll just make us much happier. Thnak you.
+            </p>
+            
+            
+            <div class="frm-item" style="margin-top: 28px">
+				<div class="frm-send-button" id="frm-sim-send" onclick="SendSIMRequest()">
+					BUY CAJON
+				</div>
+			</div>
+            
+		</div>
+		<div class="close">
+			<img id="btnClose" src="s/close.png" width="32px" onclick="CloseSIMRequest();" />
+		</div>
+	</div>
+</div>
+
+<div class="padContact" id="padSuccess">
+	<div class="padFields" style="width: 30%; margin: 10% 30% 10% 30%; text-align: center;">
+		<img src="s/done.png" style="width: 100px; padding: 48px 0 12px 0;" />
+        <h1>Done!<br /></h1>
+        <p>
+        Thank you for making a purchase!<br />
+        Our manager will contact you in 24 hours.<br />
+        </p> 
+        <div class="frm-send-button" id="frm-sim-send" onclick="CloseSuccess()" style="width: 80%; margin: 42px 10% 24px 10%;">
+					Cool
+				</div>   
+		</div>
+		
+	</div>
+</div>
+
+<div class="egg">
+	<a href="#toppestTop"><img src="s/egg_white.png" width="44px"/></a>
+</div>
+
+
+
+<div class="container">
+
+
+
+<div class="introTextContainer" id="padIntroID">
+	<div class="textColumnLeft" style="color: white;">
+    	<img src="s/logo_w.png" id="logo"/>
+        
+        <h2 style="line-height: 1.3em; margin-bottom: -6px;">Cajon Majon &mdash; <br />
+		a tiny percussion instrument.</h2>
+        
+        <p>
+        Uniquely inspired by Peruvian native instruments, we decided to create something special&mdash;a brand new drumpad that you сan take anywhere with you. But small size doesn't meen small sound.
+        </p>
+ 
+    	<p>
+        	Cajon-majon is an amazing new percussion instrument that will bring you a lots of fun.
+Perfectly shaped and made of carefully selected wood collected all round the world.
+        </p>
+        
+       
+        <div class="padSocial">
+        <div class="iconSocialWhite">
+        	<img src="s/icon_fb_w.png" id="icon">
+        	<a href="http://fb.com/cajon.majon" target="_blank">Cajon-Majon</a>
+        </div>
+        
+        <div class="iconSocialWhite">
+        	<img src="s/icon_insta_w.png" id="icon" target="_blank">
+            <a href="https://www.instagram.com/cajon.majon/">@cajon.majon</a>
+        </div>
+        
+        <div class="iconSocialWhite">
+        	<img src="s/icon_mail_W.png" id="icon" target="_blank">
+        	<a href="mailto:yo@cajon-majon.com"><nobr>yo@cajon-majon.com</nobr></a>
+        </div>
+        
+        </div>
+        
+    </div>
+
+</div>
+
+
+
+
+<!-- SHOP -->
+
+<div class="shop">
+    
+
+	
+    
+    <div class="shopItem">
+		<img src="s/shop_cajon_3.jpg" id="shopItemImg" >
+        
+        <img src="s/btnBuy.png" onclick="window.location.href='http://cajon-majon.com/'" id="btnPayPal" />
+        <!--onclick="OpenSIMRequest('Sand');"-->
+         
+   
+    </div>
+    <div class="shopItemDescr">
+    	<h5>Karo Cajon</h5>
+        <p>
+        <strong>Size:</strong> 23 × 23 × 7.5<br />
+        <strong>Tapa:</strong> Birch<br />
+		<strong>Resonator:</strong> Pine<br />
+		<strong>Frame:</strong> Mango Tree       
+        </p>
+        <p id="cajonDescr">
+        Very smooth snare and deep bass. Lightweight (640g). Any colour is availaible &mdash; our manager will confirm all details with you via e-mail.
+        </p>
+        <div class="shopItemPrice">
+        	€100 <strike style="color: red; font-size: 0.6em;">€120</strike>
+            <strong id="newYear">NEW YEAR SALE!</strong>
+        </div>
+    </div>
+    
+    <div class="shopItem">
+		<img src="s/shop_cajon_2.jpg" id="shopItemImg" >
+        
+        <img src="s/btnBuy.png" id="btnPayPal" onclick="window.location.href='http://cajon-majon.com/'" />
+      
+
+    </div>
+    <div class="shopItemDescr">
+    	<h5>Rum Cajon</h5>
+        <p>
+        <strong>Size:</strong> 23 × 23 × 7.5<br />
+        <strong>Tapa:</strong> Birch<br />
+		<strong>Resonator:</strong> Birch<br />
+		<strong>Frame:</strong> Pine       
+        </p>
+        <p id="cajonDescr">
+        Double snare provides grain sound and sharp slap on the entire surface of tapa. Any colour is availaible &mdash; our manager will confirm all details with you via e-mail.
+        </p>
+        <div class="shopItemPrice">
+        	€100 <strike style="color: red; font-size: 0.6em;">€120</strike>
+            <strong id="newYear">NEW YEAR SALE!</strong>
+        </div>
+    </div>
+    
+    <div class="shopClear"></div>
+    
+    <div class="shopItem">
+		<img src="s/shop_cajon_1.jpg" id="shopItemImg" >
+        
+        <img src="s/btnBuy.png" id="btnPayPal" onclick="window.location.href='http://cajon-majon.com/'" />
+       
+
+    </div>
+    <div class="shopItemDescr">
+    	<h5>Fingerpad</h5>
+        <p>
+        <strong>Size:</strong> 12 × 7 × 25<br />
+        <strong>Tapa:</strong> Birch<br />
+		<strong>Resonator:</strong> Pine<br />
+		<strong>Frame:</strong> Teak       
+        </p>
+        <p id="cajonDescr">
+        For everyday fingerdrumming practice. Quiet and gentle. The fingerpad is divided into 3 playing surfaces which gives a variety of sounds: tone, slap and brush-like snare.
+        </p>
+        <div class="shopItemPrice">
+        	€70 <strike style="color: red; font-size: 0.6em;">€85</strike>
+            <strong id="newYear">NEW YEAR SALE!</strong>
+        </div>
+    </div>
+    
+    <!--
+    
+      <div class="shopItemDescr">
+    	<h5>Teak  Cajon</h5>
+        <p>
+        <strong>Size:</strong> 23 × 23 × 7.5<br />
+        <strong>Tapa:</strong> Teak<br />
+		<strong>Resonator:</strong> Teak<br />
+		<strong>Frame:</strong> Teak       
+        </p>
+        <p id="cajonDescr">
+        Extra-strong and loud cajon made of Asian wood. Available only natural brown color.
+        </p>
+        <div class="shopItemPrice">
+        	€70 <strike style="color: red; font-size: 0.6em;">€85</strike>
+            <strong id="newYear">NEW YEAR SALE!</strong>
+        </div>
+    
+    -->
+    
+    <div class="shopItem">
+		<img src="s/shop_cajon_4.jpg" id="shopItemImg" >
+        <div class="btnComing">
+        	COMING SOON...
+        </div>
+    </div>
+    <div class="shopItemDescr">
+    	<h5>Wild <br />
+ Beach <br />
+		Cajon</h5>
+        
+        <p style="width: 80%">
+        A new cajon-based extra-bass and loud instrument is coming! We've almost finished all engineering jobs and made a prototype. 		</p>
+		<p  id="cajonDescr">Now it's about months to start selling this new thing! Stay tuned!
+        </p>
+        
+        
+        
+        
+    </div>
+
+</div>
+
+<div class="padDelivery" id="padDeliveryID" style="background-size: cover;">
+<div class="padHalfLeft">
+            <h1>Delivery</h1>
+            <p>
+            You'll get <strong>free</strong> worldwide delivery. 
+            It will take from 10 to 20 days depends on your location. 
+            Our main office is based in South India, other one is in Sweden.
+            </p>
+    </div>
+    <div class="padHalfRight">
+            <h1>Waranty & Moneyback</h1>
+            <p>
+            All cajons are handcrafted and carefully checked before packing. If you are not completely satisfied with your Cajon,  you may replace or exchange for a different model or simply receive a full refund.
+            </p>
+    </div>
+
+</div>
+
+<div class="textContainer" id="padArtur" style="background: url('photos/bg_archie_HD_T2.jpg') no-repeat; background-size: cover;">
+	<div class="textColumnLeft">
+    	<img src="s/logo_b.png" id="logo"/>
+        <p>
+        It all started with a simple idea to make a lightweight, compact drum that could be taken anywhere your creativity goes and used spontaneously wherever you travel. First we did it for oursleves and friends. After some experiments with size and materials we created a variety unique sounds that we feel will meet your needs as percussionist... Now many of our musicians friends has our #cajonmajon.</p>
+<p>
+We understand process of making a bell-shaped form, the choice of wood, the diameter of the bass reflex, and the amount of lacquer. Now we are proud of our birdhouses and can't stop in their production.
+        </p>
+        <p>
+        <p id="name">&mdash; Arthur Floria</p>
+        Co-founder and CTO
+        </p>
+        <div class="padSocial">
+        <div class="iconSocial">
+        	<img src="s/icon_fb.png" id="icon">
+        	<a href="http://fb.com/artur.floria">Artur Floria</a>
+        </div>
+        </div>
+       
+        
+        </div>
+        
+    </div>
+
+<!-- KARINA -->
+
+<div class="textContainer" id="padKarina" style="color: white; background: url('photos/bg_karina_HD.jpg') no-repeat left; background-size: cover;">
+	<div class="textColumnRight">
+    	<img src="s/logo_w.png" id="logo"/>
+        <p>
+        When Artur made the first cajon, it was big, flat and heavy. I wanted to have the same smooth box but only half the size without losing the deep rich sound of. After I fell in love with the word "Cajon", with the Spanish "j". So, on my Red Square Box I wrote Cajon. From this inscription a logo was born. Each custom built cajon is branded with our logo so you know it was hand crafted with love and care.</p><p>
+
+Now I am now constantly surrounded by new musicians who come to our workshop to try the cajon and connect with us through jamming. My phone is full of photos and video of lovely cajonitos. Our instagram full of drummers from all over the world.
+</p><p>
+Each Cajon is built with love and care. Although it is diffucult to separate from them, we take pride in knowing that we are sharing a piece of our love to you.
+</p>
+        </p>
+        <p>
+        <p id="name">&mdash; Karina Romanova</p>
+        Co-founder and CEO
+        </p>
+        <div class="padSocial">
+        <div class="iconSocialWhite">
+        	<img src="s/icon_fb_w.png" id="icon">
+        	<a href="http://fb.com/ro.karina">Karina Ro</a>
+        </div>
+        </div>
+        
+        </div>
+        
+    </div>
+
+</div>
+
+
+</div>
+
+<div class="textContainer" id="padSasha">
+	<div class="textColumnLeft" >
+    	<img src="s/logo_w.png" id="logo"/>
+        <h2 style="line-height: 1.3em; margin-bottom: 28px;">It's all started just for fun.
+</h2>
+        <p>
+        I had a dream to make a <a href="#commercialPad" style="color: white; font-weight: normal; font-size: 1em; border-bottom: 1px solid white;">a commercial</a>. And a dream to record sweet ad-style music for it. So we've already had about 15 cool-sounding cajons, a camera, a flute, an ukulele, some colored fabric backgrounds and and huge desire to create.
+<br /><br />
+Then the video transformed into a concept from that site and brought us to a photo-session with the colorful backgrounds of indian houses where we've started our manufacture. Environment gifted us almost everything. Now we want to give back. And why couldn't it be a musical instrument that can bring lots of fun and inspire thousands of people?
+        
+ 
+    	
+        	<h2 style="display: block; line-height: 1.3em; margin: 0px 0 -6px 0;"><br />
+It's fun to make and fun to play.</h2>
+            <br /><br />
+        </p>
+        <p>
+        <p id="name">&mdash; Sasha Karachinsky</p>
+        A guy who made all visual stuff 
+        </p>
+        <div class="padSocial">
+        <div class="iconSocialWhite">
+        	<img src="s/icon_fb_w.png" id="icon">
+        	<a href="http://fb.com/sashakarachinsky">Sasha Karachinsky</a>
+        </div>
+        </div>
+        
+        </div>
+        
+    </div>
+
+</div>
+
+<div class="textContainer" style="padding: 64px 0 48px 0;"  id="padCustom">
+	<div class="textColumnRight">
+    	<img src="s/logo_custom.png" id="logoCustom" />
+        <p>
+        We love music, we love musical instruments and so we spend hundreds of hours discovering new sounds and designing special instruments. Now we have something to offer: the custom-made cajon. Here are some options:
+        </p>
+ 
+    	<p style="font-size: 1em; line-height: 1.4em;">
+        	First &mdash; a choice of the wood: Birch, Pine, Teak, Jet Fruit, Mango Tree...<br /><br />
+            Then you go further: the size. A pocket one for fingerdrumming or a huge 30×30x10 cm box with a tom-like bass.<br /><br />
+            Third is a type of slap sound: snare-like or more «sandy» with a long shaker-like sustain.
+        </p>       
+    </div>
+
+</div>
+
+<div class="videoPad" id="commercialPad">
+
+    <div class="videoDescription" >
+    <p>
+      <h1 style="margin-left: -28px;">«With a little help of my friends...»</h1>
+        <br />
+        Cajon Majon was founded as creative project of a group of friends in Goa, India few yrears ago. This video is a symbol of our Way of Being and the Way of Cajon-making: bright, funny, inspiring and always ready for travelling.
+    </p>
+    </div>
+    
+    <div class="videoPlayer" >
+        <style>.embed-container { position: relative; padding-bottom: 49%; height: 0; overflow: hidden; max-width: 100%; box-shadow: 0px 32px 168px rgba(239,14,104,0.67); } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe id="playerScreen" src='https://www.youtube.com/embed/fbs9_3cvjLQ' frameborder='0' allowfullscreen></iframe></div>
+    </div>
+
+</div>
+
+<!--
+
+<div class="column"><img src="s/ph_portable.jpg" id="columnImg"></div>
+<div class="column"><img src="s/ph_alisa_r.jpg" id="columnImg"></div>
+<div class="column"><img src="s/ph_lightweight.jpg" id="columnImg"></div>
+
+<div class="column"><img src="s/ph_andrew_b.jpg" id="columnImg"></div>
+<div class="column"><img src="s/ph_compact.jpg" id="columnImg"></div>
+<div class="column"><img src="s/ph_andrew.jpg" id="columnImg"></div>
+
+
+<div class="column"><img src="s/ph_4_travelling.jpg" id="columnImg"></div>
+<div class="column"><img src="s/ph_archi_g.jpg" id="columnImg"></div>
+<div class="column"><img src="s/ph_very_loud.jpg" id="columnImg"></div>
+
+<div class="column"><img src="s/ph_karina_b.jpg" id="columnImg"></div>
+<div class="column"><img src="s/ph_jason_y.jpg" id="columnImg"></div>
+<div class="column"><img src="s/ph_karina_r.jpg" id="columnImg"></div>
+
+
+-->
+
+
+<div class="footerContainer">
+    <div class="copyright">
+	    2016&mdash;2018 &copy; Cajon Majon<br />
+        <br />
+        Site, concept and photos<br />
+<strong>made by</strong> 
+<a href="http://karachinsky.ru/">Sasha Karachinsky</a>
+        
+    </div>
+    
+    <div class="footerSocial">
+    Social:<br /><br />
+<a href="http://fb.com/cajon.majon">Facebook</a><br />
+<a href="http://instagram.com/cajon.majon">Instagram</a>
+    
+    </div>
+    
+    <div class="copyrightDesign">
+    	<a href="http://karachinsky.ru/"><img src="s/yarrco_w.png" id="logoSasha" style="cursor: pointer; "></a>
+    </div>
+    
+</div>
+</div>
+
+<form id="payPalForm" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+			<input type="hidden" name="cmd" value="_s-xclick">
+			<input type="hidden" name="hosted_button_id" value="VQ2LV5WPAKN8Q">
+			<input type="hidden" name="on0" value="orderID">Order ID<input type="text" name="os0" maxlength="200">
+			<input type="image" src="https://www.paypalobjects.com/en_US/SE/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+</form>
+
+
+
+</body>
+</html>

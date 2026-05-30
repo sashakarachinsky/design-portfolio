@@ -1,0 +1,9 @@
+/*  Глобальная хуйня  */
+
+	.projectDescriptionOld {  color: #efefef; text-align: left;  background-color: rgba(0,0,0,1); padding: 32px 0px 16px 0px; float: left; width: 100%; font-size: 0.9em;}
+	
+	.projectDescriptionOld p {font-family: Verdana, Geneva, sans-serif; font-size: 0.9em}
+	
+	.ico { float: left; margin: 28px 12px 0px -54px;}
+	
+	 h1 {display: block; padding-bottom: 32px;}
