@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap');
+
+body {
+  font-family: 'Jost', sans-serif;
+  font-size: 1.4em;
+  line-height: 1.5em;
+  margin: 0;
+  padding: 3%;
+  text-align: left;
+  font-weight: 300;
+  background-color: #222;
+  color: #ddd;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.social_icon,
+.social_icon img {
+  text-decoration: none !important;
+  border: 0 !important;
+  outline: none;
+}
+
+.social a,
+.social a:link,
+.social a:visited,
+.social a:hover {
+  border-bottom: none !important;
+}
+
+.block {
+  white-space: nowrap;
+}
+
+.greyed {
+  opacity: 0.3;
+  font-size: 0.7em;
+}
+
+.social_icon {
+  width: 48px;
+  margin: 24px 24px 0 0;
+}
+
+.social_icon:hover {
+  opacity: 0.7;
+}
+
+a:link,
+a:visited {
+  color: white;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255,255,255,0.5);
+  line-height: 2em;
+  transition: color 400ms;
+}
+
+a:hover {
+  color: white;
+  border-bottom: 1px solid rgba(255,255,255,1);
+  transition: color 200ms;
+}
+
+.ava {
+  width: 250px;
+  padding: 0 5% 50% 0;
+  float: left;
+}
+
+@media (max-width: 768px) {
+
+  body {
+    font-size: 1.3em;
+    padding: 0;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  .ava {
+    width: 70%;
+    padding: 0 15% 15% 15%;
+  }
+
+  .block {
+    white-space: normal;
+    padding: 10%;
+  }
+
+  .social_icon {
+    width: 42px;
+    margin-right: 16px;
+  }
+
+  .social {
+    display: block;
+    width: 100%;
+    padding: 12% 0;
+  }
+}
