@@ -1,38 +1,44 @@
 document.addEventListener('DOMContentLoaded', () => {
+
+  if (window.innerWidth <= 768) return;
+
+
+
   const lightbox = document.getElementById('lightbox');
   const lightboxImg = document.getElementById('lightbox-img');
   const images = document.querySelectorAll('.gallery img');
 
   const prev = document.getElementById('prev');
-const next = document.getElementById('next');
-
-function showImage(index) {
-  currentIndex = index;
-  lightboxImg.src = images[currentIndex].src;
-}
-
-next.addEventListener('click', e => {
-  e.stopPropagation();
-  showImage((currentIndex + 1) % images.length);
-});
-
-prev.addEventListener('click', e => {
-  e.stopPropagation();
-  showImage((currentIndex - 1 + images.length) % images.length);
-});
+  const next = document.getElementById('next');
 
   let currentIndex = 0;
 
+  function showImage(index) {
+    currentIndex = index;
+    lightboxImg.src = images[currentIndex].src;
+  }
+
   images.forEach((img, index) => {
     img.addEventListener('click', () => {
-      currentIndex = index;
-      lightboxImg.src = img.src;
+      showImage(index);
       lightbox.classList.add('active');
     });
   });
 
-  lightbox.addEventListener('click', () => {
-    lightbox.classList.remove('active');
+  lightbox.addEventListener('click', e => {
+    if (e.target === lightbox) {
+      lightbox.classList.remove('active');
+    }
+  });
+
+  next.addEventListener('click', e => {
+    e.stopPropagation();
+    showImage((currentIndex + 1) % images.length);
+  });
+
+  prev.addEventListener('click', e => {
+    e.stopPropagation();
+    showImage((currentIndex - 1 + images.length) % images.length);
   });
 
   document.addEventListener('keydown', e => {
@@ -43,19 +49,11 @@ prev.addEventListener('click', e => {
     }
 
     if (e.key === 'ArrowRight') {
-      currentIndex = (currentIndex + 1) % images.length;
-      lightboxImg.src = images[currentIndex].src;
+      showImage((currentIndex + 1) % images.length);
     }
 
     if (e.key === 'ArrowLeft') {
-      currentIndex = (currentIndex - 1 + images.length) % images.length;
-      lightboxImg.src = images[currentIndex].src;
+      showImage((currentIndex - 1 + images.length) % images.length);
     }
   });
-});
-
-lightbox.addEventListener('click', e => {
-  if (e.target === lightbox) {
-    lightbox.classList.remove('active');
-  }
 });
