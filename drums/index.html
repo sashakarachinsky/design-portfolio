@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>FINGERDRUM 0.1</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#111;color:#eee;font-family:-apple-system,BlinkMacSystemFont,sans-serif;padding:22px}
+h1{margin:0;font-size:28px;letter-spacing:2px}.meta{color:#888;font-size:13px;margin-top:4px}
+#status{margin:18px 0;padding:12px;border:1px solid #333;border-radius:10px;color:#aaa}
+#pads{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;max-width:600px}
+.pad{height:105px;border:1px solid #444;border-radius:14px;background:#1b1b1b;display:flex;flex-direction:column;align-items:center;justify-content:center;transition:.04s}
+.pad.hit{background:#eee;color:#111;transform:scale(.97)}.key{font-size:24px;font-weight:700}.name{font-size:14px;margin-top:7px;color:#999}
+.hit .name{color:#333}.help{margin-top:20px;color:#777;font-size:13px;line-height:1.5;max-width:600px}
+button{font:inherit;color:#eee;background:#222;border:1px solid #444;border-radius:9px;padding:10px 14px;margin-top:10px}
+</style></head>
+<body>
+<h1>FINGERDRUM</h1><div class="meta">v0.1.0 • Web prototype • pure synthesis</div>
+<div id="status">Controller: not detected</div><button id="start">ENABLE AUDIO</button><div id="pads"></div>
+<div class="help">Connect the GameSir before opening this page. Press the physical buttons. If Safari does not detect it immediately, reconnect and reload.</div>
+<script>
+const pads=[["A","KICK"],["B","SNARE"],["X","CLOSED HAT"],["Y","CLAP"],["L","OPEN HAT"],["R","LOW TOM"],["ZL","HIGH TOM"],["ZR","CRASH"]];
+const padsEl=document.querySelector("#pads");pads.forEach((p,i)=>{let e=document.createElement("div");e.className="pad";e.id="pad"+i;e.innerHTML=`<div class="key">${p[0]}</div><div class="name">${p[1]}</div>`;padsEl.appendChild(e)});
+let audioCtx=null,master=null;
+function audioOn(){if(!audioCtx){audioCtx=new(window.AudioContext||window.webkitAudioContext)();master=audioCtx.createGain();master.gain.value=.7;master.connect(audioCtx.destination)}if(audioCtx.state==="suspended")audioCtx.resume()}
+document.querySelector("#start").onclick=audioOn;
+function noiseBuffer(){let b=audioCtx.createBuffer(1,audioCtx.sampleRate*.5,audioCtx.sampleRate),d=b.getChannelData(0);for(let i=0;i<d.length;i++)d[i]=Math.random()*2-1;return b}
+function tone(freq,dur,type="sine",gain=.5){let n=audioCtx.currentTime,o=audioCtx.createOscillator(),g=audioCtx.createGain();o.type=type;o.frequency.setValueAtTime(freq,n);g.gain.setValueAtTime(.0001,n);g.gain.exponentialRampToValueAtTime(gain,n+.002);g.gain.exponentialRampToValueAtTime(.0001,n+dur);o.connect(g);g.connect(master);o.start(n);o.stop(n+dur+.02)}
+function noise(dur,gain=.35,ff=7000){let n=audioCtx.currentTime,s=audioCtx.createBufferSource(),f=audioCtx.createBiquadFilter(),g=audioCtx.createGain();s.buffer=noiseBuffer();f.type="highpass";f.frequency.value=ff;g.gain.setValueAtTime(.0001,n);g.gain.exponentialRampToValueAtTime(gain,n+.002);g.gain.exponentialRampToValueAtTime(.0001,n+dur);s.connect(f);f.connect(g);g.connect(master);s.start(n);s.stop(n+dur+.02)}
+function hit(i){audioOn();let n=audioCtx.currentTime,e=document.querySelector("#pad"+i);e.classList.add("hit");setTimeout(()=>e.classList.remove("hit"),90);
+if(i===0){let o=audioCtx.createOscillator(),g=audioCtx.createGain();o.type="sine";o.frequency.setValueAtTime(150,n);o.frequency.exponentialRampToValueAtTime(48,n+.12);g.gain.setValueAtTime(.9,n);g.gain.exponentialRampToValueAtTime(.0001,n+.38);o.connect(g);g.connect(master);o.start(n);o.stop(n+.4)}
+else if(i===1){tone(190,.12,"triangle",.25);noise(.16,.55,1200)}
+else if(i===2)noise(.055,.32,6500)
+else if(i===3){noise(.025,.28,1400);setTimeout(()=>noise(.025,.22,1400),18);setTimeout(()=>noise(.035,.16,1400),38)}
+else if(i===4)noise(.28,.28,5500)
+else if(i===5){let o=audioCtx.createOscillator(),g=audioCtx.createGain();o.type="sine";o.frequency.setValueAtTime(150,n);o.frequency.exponentialRampToValueAtTime(75,n+.18);g.gain.setValueAtTime(.55,n);g.gain.exponentialRampToValueAtTime(.0001,n+.32);o.connect(g);g.connect(master);o.start(n);o.stop(n+.35)}
+else if(i===6){let o=audioCtx.createOscillator(),g=audioCtx.createGain();o.type="sine";o.frequency.setValueAtTime(300,n);o.frequency.exponentialRampToValueAtTime(150,n+.13);g.gain.setValueAtTime(.45,n);g.gain.exponentialRampToValueAtTime(.0001,n+.25);o.connect(g);g.connect(master);o.start(n);o.stop(n+.28)}
+else noise(.65,.32,3500)}
+const keyMap={KeyA:0,KeyS:1,KeyD:2,KeyF:3,KeyQ:4,KeyW:5,KeyE:6,KeyR:7};addEventListener("keydown",e=>{if(keyMap[e.code]!==undefined&&!e.repeat)hit(keyMap[e.code])});
+let prev=[];
+function pressed(b){return b&&(b.pressed||b.value>.5)}
+function poll(){let gps=navigator.getGamepads?navigator.getGamepads():[],gp=[...gps].find(x=>x),st=document.querySelector("#status");if(!gp){st.textContent="Controller: not detected";prev=[];requestAnimationFrame(poll);return}
+st.textContent=`Controller: ${gp.id} • ${gp.buttons.length} buttons`;gp.buttons.forEach((b,i)=>{if(pressed(b)&&!prev[i]){if(i<8)hit(i)}});prev=gp.buttons.map(pressed);requestAnimationFrame(poll)}
+poll();
+</script></body></html>
