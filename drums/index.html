@@ -5,29 +5,36 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>FINGERDRUM 0.1</title>
 <style>
-*{box-sizing:border-box}body{margin:0;background:#111;color:#eee;font-family:-apple-system,BlinkMacSystemFont,sans-serif;padding:22px}
-h1{margin:0;font-size:28px;letter-spacing:2px}.meta{color:#888;font-size:13px;margin-top:4px}
-#status{margin:18px 0;padding:12px;border:1px solid #333;border-radius:10px;color:#aaa}
-#pads{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;max-width:600px}
-.pad{height:105px;border:1px solid #444;border-radius:14px;background:#1b1b1b;display:flex;flex-direction:column;align-items:center;justify-content:center;transition:.04s}
-.pad.hit{background:#eee;color:#111;transform:scale(.97)}.key{font-size:24px;font-weight:700}.name{font-size:14px;margin-top:7px;color:#999}
-.hit .name{color:#333}.help{margin-top:20px;color:#777;font-size:13px;line-height:1.5;max-width:600px}
-button{font:inherit;color:#eee;background:#222;border:1px solid #444;border-radius:9px;padding:10px 14px;margin-top:10px}
+*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden}
+body{background:#111;color:#eee;font-family:-apple-system,BlinkMacSystemFont,sans-serif;padding:max(12px,env(safe-area-inset-top)) max(12px,env(safe-area-inset-right)) max(12px,env(safe-area-inset-bottom)) max(12px,env(safe-area-inset-left));display:flex;flex-direction:column}
+header{flex:0 0 auto}h1{margin:0;font-size:clamp(22px,4vw,30px);letter-spacing:2px}.meta{color:#888;font-size:12px;margin-top:2px}
+#status{margin:8px 0;padding:8px 10px;border:1px solid #333;border-radius:9px;color:#aaa;font-size:12px}
+#controls{display:flex;gap:8px}button{font:inherit;color:#eee;background:#222;border:1px solid #444;border-radius:9px;padding:9px 13px}
+#pads{flex:1 1 auto;min-height:0;width:100%;display:grid;grid-template-columns:1fr 1.6fr 1fr;grid-template-rows:1fr 1.5fr 1fr;gap:clamp(8px,2vw,16px);padding:clamp(8px,2vw,18px);align-items:center;justify-items:center}
+.pad{width:min(24vw,150px);height:min(24vw,150px);border:2px solid #444;border-radius:50%;background:#1b1b1b;display:flex;flex-direction:column;align-items:center;justify-content:center;transition:.035s;user-select:none;-webkit-user-select:none;touch-action:none}
+.pad.hit{background:#eee;color:#111;transform:scale(.94)}.key{font-size:clamp(20px,4vw,30px);font-weight:700}.name{font-size:clamp(9px,1.8vw,13px);margin-top:5px;color:#999;text-align:center}.hit .name{color:#333}
+#pad0{grid-column:2;grid-row:2}#pad1{grid-column:3;grid-row:2}#pad2{grid-column:1;grid-row:2}#pad3{grid-column:2;grid-row:1}#pad4{grid-column:1;grid-row:1}#pad5{grid-column:3;grid-row:1}#pad6{grid-column:1;grid-row:3}#pad7{grid-column:3;grid-row:3}
+.help{flex:0 0 auto;color:#666;font-size:11px;line-height:1.35;text-align:center;padding:4px}
+@media (orientation:landscape){#pads{grid-template-columns:1fr 1.4fr 1fr 1.4fr 1fr;grid-template-rows:1fr 1fr;padding:4px 2vw}
+#pad0{grid-column:3;grid-row:2}#pad1{grid-column:4;grid-row:2}#pad2{grid-column:2;grid-row:2}#pad3{grid-column:3;grid-row:1}#pad4{grid-column:1;grid-row:1}#pad5{grid-column:5;grid-row:1}#pad6{grid-column:1;grid-row:2}#pad7{grid-column:5;grid-row:2}.pad{width:min(18vh,150px);height:min(18vh,150px)}.help{display:none}}
 </style></head>
 <body>
 <h1>FINGERDRUM</h1><div class="meta">v0.1.0 • Web prototype • pure synthesis</div>
-<div id="status">Controller: not detected</div><button id="start">ENABLE AUDIO</button><div id="pads"></div>
+<div id="status">Controller: not detected • Audio: locked</div><div id="controls"><button id="start">ENABLE AUDIO</button><button id="test">TEST SOUND</button></div><div id="pads"></div>
 <div class="help">Connect the GameSir before opening this page. Press the physical buttons. If Safari does not detect it immediately, reconnect and reload.</div>
 <script>
 const pads=[["A","KICK"],["B","SNARE"],["X","CLOSED HAT"],["Y","CLAP"],["L","OPEN HAT"],["R","LOW TOM"],["ZL","HIGH TOM"],["ZR","CRASH"]];
 const padsEl=document.querySelector("#pads");pads.forEach((p,i)=>{let e=document.createElement("div");e.className="pad";e.id="pad"+i;e.innerHTML=`<div class="key">${p[0]}</div><div class="name">${p[1]}</div>`;padsEl.appendChild(e)});
 let audioCtx=null,master=null;
-function audioOn(){if(!audioCtx){audioCtx=new(window.AudioContext||window.webkitAudioContext)();master=audioCtx.createGain();master.gain.value=.7;master.connect(audioCtx.destination)}if(audioCtx.state==="suspended")audioCtx.resume()}
-document.querySelector("#start").onclick=audioOn;
+async function audioOn(){if(!audioCtx){audioCtx=new(window.AudioContext||window.webkitAudioContext)({latencyHint:"interactive"});master=audioCtx.createGain();master.gain.value=.7;master.connect(audioCtx.destination);const o=audioCtx.createOscillator(),g=audioCtx.createGain();g.gain.value=.00001;o.connect(g);g.connect(audioCtx.destination);o.start();o.stop(audioCtx.currentTime+.03)}if(audioCtx.state!=="running")await audioCtx.resume();updateStatus()}
+function updateStatus(){const gps=navigator.getGamepads?navigator.getGamepads():[],gp=[...gps].find(x=>x);document.querySelector("#status").textContent=`${gp?"Controller: "+gp.id:"Controller: not detected"} • Audio: ${audioCtx&&audioCtx.state==="running"?"ready":"locked"}`}
+document.querySelector("#start").addEventListener("click",audioOn);
+document.querySelector("#test").addEventListener("click",async()=>{await audioOn();tone(440,.18,"sine",.25)});
+document.addEventListener("touchstart",()=>{if(audioCtx&&audioCtx.state!=="running")audioCtx.resume()},{passive:true});
 function noiseBuffer(){let b=audioCtx.createBuffer(1,audioCtx.sampleRate*.5,audioCtx.sampleRate),d=b.getChannelData(0);for(let i=0;i<d.length;i++)d[i]=Math.random()*2-1;return b}
 function tone(freq,dur,type="sine",gain=.5){let n=audioCtx.currentTime,o=audioCtx.createOscillator(),g=audioCtx.createGain();o.type=type;o.frequency.setValueAtTime(freq,n);g.gain.setValueAtTime(.0001,n);g.gain.exponentialRampToValueAtTime(gain,n+.002);g.gain.exponentialRampToValueAtTime(.0001,n+dur);o.connect(g);g.connect(master);o.start(n);o.stop(n+dur+.02)}
 function noise(dur,gain=.35,ff=7000){let n=audioCtx.currentTime,s=audioCtx.createBufferSource(),f=audioCtx.createBiquadFilter(),g=audioCtx.createGain();s.buffer=noiseBuffer();f.type="highpass";f.frequency.value=ff;g.gain.setValueAtTime(.0001,n);g.gain.exponentialRampToValueAtTime(gain,n+.002);g.gain.exponentialRampToValueAtTime(.0001,n+dur);s.connect(f);f.connect(g);g.connect(master);s.start(n);s.stop(n+dur+.02)}
-function hit(i){audioOn();let n=audioCtx.currentTime,e=document.querySelector("#pad"+i);e.classList.add("hit");setTimeout(()=>e.classList.remove("hit"),90);
+function hit(i){if(!audioCtx||audioCtx.state!=='running')return;let n=audioCtx.currentTime,e=document.querySelector("#pad"+i);e.classList.add("hit");setTimeout(()=>e.classList.remove("hit"),90);
 if(i===0){let o=audioCtx.createOscillator(),g=audioCtx.createGain();o.type="sine";o.frequency.setValueAtTime(150,n);o.frequency.exponentialRampToValueAtTime(48,n+.12);g.gain.setValueAtTime(.9,n);g.gain.exponentialRampToValueAtTime(.0001,n+.38);o.connect(g);g.connect(master);o.start(n);o.stop(n+.4)}
 else if(i===1){tone(190,.12,"triangle",.25);noise(.16,.55,1200)}
 else if(i===2)noise(.055,.32,6500)
@@ -40,6 +47,6 @@ const keyMap={KeyA:0,KeyS:1,KeyD:2,KeyF:3,KeyQ:4,KeyW:5,KeyE:6,KeyR:7};addEventL
 let prev=[];
 function pressed(b){return b&&(b.pressed||b.value>.5)}
 function poll(){let gps=navigator.getGamepads?navigator.getGamepads():[],gp=[...gps].find(x=>x),st=document.querySelector("#status");if(!gp){st.textContent="Controller: not detected";prev=[];requestAnimationFrame(poll);return}
-st.textContent=`Controller: ${gp.id} • ${gp.buttons.length} buttons`;gp.buttons.forEach((b,i)=>{if(pressed(b)&&!prev[i]){if(i<8)hit(i)}});prev=gp.buttons.map(pressed);requestAnimationFrame(poll)}
+st.textContent=`Controller: ${gp.id} • ${gp.buttons.length} buttons • Audio: ${audioCtx&&audioCtx.state==="running"?"ready":"locked"}`;gp.buttons.forEach((b,i)=>{if(pressed(b)&&!prev[i]){const map={0:0,1:1,2:2,3:3,4:4,5:5,6:6,7:7};if(map[i]!==undefined)hit(map[i])}});prev=gp.buttons.map(pressed);requestAnimationFrame(poll)}
 poll();
 </script></body></html>
