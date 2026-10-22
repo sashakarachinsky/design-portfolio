@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
-<title>Dream 41</title>
+<title>Dream V41</title>
 <style>
 :root {
   --site-primary: #000000;
@@ -43,7 +43,15 @@ button:focus-visible { outline:2px solid #000; outline-offset:5px; }
 <main id="app">
   <canvas id="game" aria-label="Игровое поле. Мышь, WASD и стрелки поворачивают камеру."></canvas>
   <div class="hud"><div class="version" id="version">VERSION 41</div></div>
-
+  <section class="overlay" id="overlay" hidden>
+    <div class="panel">
+      <div class="kicker">An impossible space</div>
+      <h1>STAY<br>ALIVE.</h1>
+      <p class="desc">Белое пространство. Чёрные препятствия.<br>Движение не остановить. Пустоты не останется.</p>
+      <button id="start">Enter the void</button>
+      <div class="small">Mouse / touch · WASD / Arrow keys</div>
+    </div>
+  </section>
 </main>
 <script>
 (() => {
