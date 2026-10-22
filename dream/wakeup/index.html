@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<title>VOID / stay alive</title>
+<style>
+:root {
+  --site-primary: #000000;
+  --site-on-primary: #ffffff;
+  --site-secondary: #eeeeee;
+  --site-on-secondary: #111111;
+  --site-background: #ffffff;
+  --site-on-background: #000000;
+  --site-font-body: Arial, Helvetica, sans-serif;
+  --site-font-heading: Arial, Helvetica, sans-serif;
+  --site-heading-scale: 1;
+  --site-spacing-scale: 1;
+  --site-radius-scale: 1;
+  --site-decoration-opacity: 1;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; width: 100%; height: 100%; overflow: hidden; }
+body { background: light-dark(#ffffff, #ffffff); color: #000; font-family: var(--site-font-body); }
+#app { position: relative; width: 100%; height: 100%; min-height: 440px; background-color: var(--site-background); color: var(--site-on-background); overflow: hidden; border-radius: 0; }
+canvas { position:absolute; inset:0; width:100%; height:100%; display:block; touch-action:none; cursor:none; }
+.hud { position:absolute; z-index:2; pointer-events:none; left:clamp(18px,4vw,48px); right:clamp(18px,4vw,48px); top:clamp(18px,4vh,34px); display:flex; justify-content:space-between; align-items:flex-start; text-transform:uppercase; letter-spacing:.12em; font-size:10px; line-height:1.5; }
+.version { opacity:.45; font-size:9px; letter-spacing:.12em; }
+.hud { left:18px; right:auto; top:16px; }
+.overlay { position:absolute; inset:0; z-index:3; display:flex; align-items:center; justify-content:center; padding:28px; background:rgba(255,255,255,.94); }
+.panel { width:min(460px,100%); text-align:center; }
+.kicker { font-size:10px; font-weight:700; letter-spacing:.24em; text-transform:uppercase; }
+h1 { font-family:var(--site-font-heading); font-size:clamp(48px,11vw,88px); line-height:.83; letter-spacing:-.09em; margin:22px 0 24px; font-weight:900; }
+.desc { max-width:320px; margin:0 auto; font-size:13px; line-height:1.7; color:#555; }
+button { appearance:none; border:1px solid #000; border-radius:0; background:#000; color:#fff; padding:16px 28px; margin-top:30px; font:700 11px var(--site-font-body); text-transform:uppercase; letter-spacing:.18em; cursor:pointer; }
+button:focus-visible { outline:2px solid #000; outline-offset:5px; }
+.small { font-size:9px; color:#777; letter-spacing:.12em; text-transform:uppercase; margin-top:18px; }
+#overlay[hidden] { display:none; }
+@media (max-height:520px) { h1 { margin:12px 0; font-size:52px; } button { margin-top:16px; padding:12px 22px; } .desc { font-size:12px; } }
+</style>
+</head>
+<body>
+<main id="app">
+  <canvas id="game" aria-label="Игровое поле. Мышь, WASD и стрелки поворачивают камеру."></canvas>
+  <div class="hud"><div class="version" id="version">VERSION 48</div></div>
+  <section class="overlay" id="overlay" hidden>
+    <div class="panel">
+      <div class="kicker">An impossible space</div>
+      <h1>STAY<br>ALIVE.</h1>
+      <p class="desc">Белое пространство. Чёрные препятствия.<br>Движение не остановить. Пустоты не останется.</p>
+      <button id="start">Enter the void</button>
+      <div class="small">Mouse / touch · WASD / Arrow keys</div>
+    </div>
+  </section>
+</main>
+<script>
+(() => {
+  const canvas = document.getElementById('game');
+  const ctx = canvas.getContext('2d', { alpha: false });
+  const overlay = document.getElementById('overlay');
+  const startBtn = document.getElementById('start');
+  const app = document.getElementById('app');
+  let w=0,h=0,dpr=1, raf=0, running=false, ended=false;
+  let startAt=0, lastAt=0, elapsed=0, speed=0, spawnClock=0, lineClock=0, flashUntil=0;
+  let angle=0, targetAngle=0, pitch=0, targetPitch=0, turn=0, distance=0, pointerX=null, pointerY=null, handTurbulence=0;
+  const keys=new Set();
+  let obstacles=[], lines=[], particles=[];
+  let player={x:0,y:0,r:5};
+  const camera={x:0,y:1.65,z:0,fov:Math.PI/2.7};
+  const rand=(a,b)=>a+Math.random()*(b-a);
+  const clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
+  function resize(){
+    const r=app.getBoundingClientRect(); w=r.width; h=r.height;
+    dpr=Math.min(window.devicePixelRatio||1,2);
+    canvas.width=Math.round(w*dpr); canvas.height=Math.round(h*dpr);
+    ctx.setTransform(dpr,0,0,dpr,0,0);
+    player.x=w/2; player.y=h/2;
+    draw();
+  }
+  function draw(){
+    ctx.fillStyle='#fff'; ctx.fillRect(0,0,w,h);
+    // Perspective projection: flat black geometry grows as it approaches the camera.
+    const focal=(w*.5)/Math.tan(camera.fov*.5);
+    const handYaw=(Math.sin(elapsed*1.73+Math.sin(elapsed*.37)*.8)*.0015+Math.sin(elapsed*.61+2.2)*.0018+Math.sin(elapsed*2.83+1.1)*.0008) + handTurbulence*(Math.sin(elapsed*13.7+Math.sin(elapsed*2.1))* .0032+Math.sin(elapsed*19.1+2.7)*.0021);
+    const handPitch=(Math.sin(elapsed*1.29+Math.sin(elapsed*.29+1)*.7)*.0013+Math.sin(elapsed*.47+2.1)*.0017+Math.sin(elapsed*2.37)*.0007) + handTurbulence*(Math.sin(elapsed*16.7+Math.sin(elapsed*1.8+1))* .0028+Math.sin(elapsed*22.3+1.4)*.0018);
+    const viewAngle=angle+handYaw, viewPitch=clamp(pitch+handPitch,-1.22,1.22);
+    const cy=Math.cos(viewAngle), sy=Math.sin(viewAngle), cp=Math.cos(viewPitch), sp=Math.sin(viewPitch);
+    // Orthonormal camera basis: yaw turns around world-up; pitch never rolls the camera.
+    const right={x:cy,y:0,z:-sy};
+    const up={x:-sy*sp,y:cp,z:-cy*sp};
+    const forward={x:sy*cp,y:sp,z:cy*cp};
+    const project=(x,y,z)=>{
+      const dx=x-camera.x, dy=y-camera.y, dz=z-camera.z;
+      const horizontal=dx*right.x+dy*right.y+dz*right.z;
+      const vertical=dx*up.x+dy*up.y+dz*up.z;
+      const depth=dx*forward.x+dy*forward.y+dz*forward.z;
+      const d=Math.max(.12,depth);
+      return {x:w*.5+horizontal*focal/d,y:h*.5-vertical*focal/d,s:focal/d,depth};
+    };
+    for(const l of lines){
+      const x1=l.x1,y1=l.y1,z1=l.z1,x2=l.x2,y2=l.y2,z2=l.z2;
+      const dx=x2-x1,dy=y2-y1,dz=z2-z1;
+      const camX= camera.x, camY=camera.y, camZ=camera.z;
+      const cy=Math.cos(viewAngle), sy=Math.sin(viewAngle), cp=Math.cos(viewPitch), sp=Math.sin(viewPitch);
+      const fx=sy*cp, fy=sp, fz=cy*cp, rx=cy, rz=-sy, ux=-sy*sp, uy=cp, uz=-cy*sp;
+      const toCam=(x,y,z)=>{
+        const ax=x-camX, ay=y-camY, az=z-camZ;
+        return {h:ax*rx+ay*0+az*rz,v:ax*ux+ay*uy+az*uz,d:ax*fx+ay*fy+az*fz};
+      };
+      let a=toCam(x1,y1,z1), b=toCam(x2,y2,z2);
+      const near=.25;
+      // Clip against the near plane using the original endpoints; mutating one
+      // endpoint before calculating the other made lines collapse/shorten.
+      if(a.d<=near && b.d<=near) continue;
+      if(a.d<=near || b.d<=near){
+        const t=(near-a.d)/(b.d-a.d);
+        const cut={h:a.h+(b.h-a.h)*t,v:a.v+(b.v-a.v)*t,d:near};
+        if(a.d<=near) a=cut; else b=cut;
+      }
+      let ax=w*.5+a.h*focal/a.d, ay=h*.5-a.v*focal/a.d;
+      let bx=w*.5+b.h*focal/b.d, by=h*.5-b.v*focal/b.d;
+      const vx=bx-ax, vy=by-ay, len=Math.hypot(vx,vy);
+      if(len<1e-6)continue;
+      // Extend each projected segment in both directions to the viewport edges.
+      const ux2=vx/len, uy2=vy/len;
+      const reach=Math.hypot(w,h)*2;
+      // Temporary test: no distance-based transparency on lines.
+      ctx.strokeStyle='#000';
+      ctx.lineWidth=Math.max(.45,l.width*Math.min(focal/a.d,focal/b.d));
+      ctx.beginPath();ctx.moveTo(ax-ux2*reach,ay-uy2*reach);ctx.lineTo(bx+ux2*reach,by+uy2*reach);ctx.stroke();
+    }
+    for(const o of obstacles){
+      const jx=Math.sin(elapsed*o.jf+o.jp)*o.ja + Math.sin(elapsed*(o.jf*.57)+o.jp*1.7)*o.ja*.45;
+      const jy=Math.sin(elapsed*(o.jf*.83)+o.jp*2.1)*o.ja*.8;
+      const jz=Math.cos(elapsed*(o.jf*.69)+o.jp*.8)*o.ja*.55;
+      const p=project(o.x+jx,o.y+jy,o.z+jz), r=o.r*p.s;
+      if(r>0 && p.depth>.2){
+        // Temporary test: spheres are fully opaque regardless of distance.
+        ctx.fillStyle='#000';
+        ctx.beginPath();ctx.arc(p.x,p.y,r,0,Math.PI*2);ctx.fill();
+      }
+    }
+  }
+  function reset(){
+    obstacles=[]; lines=[]; particles=[]; elapsed=0; speed=-6.75; spawnClock=0; lineClock=0;
+    angle=0; targetAngle=0; pitch=0; targetPitch=0; handTurbulence=0; pointerX=null; pointerY=null; keys.clear(); distance=0; turn=0; ended=false;
+    player.x=w/2; player.y=h/2;
+    // Begin with a dense field. Each object has its own random disappearance time;
+    // the field thins slowly at first and then releases the screen back to white.
+    for(let i=0;i<760;i++) addObstacle(false, Math.random()<.38);
+    for(let i=0;i<52;i++) addLine();
+  }
+  function addObstacle(allowCluster=true, distantOnly=false){
+    // Spawn relative to the actual viewing direction, so looking straight down
+    // still reveals a field of spheres instead of an empty horizontal shell.
+    const radius=distantOnly ? Math.cbrt(rand(18**3,90**3)) : Math.cbrt(rand(3.5**3,62**3));
+    const cy=Math.cos(angle), sy=Math.sin(angle), cp=Math.cos(pitch), sp=Math.sin(pitch);
+    const forward={x:sy*cp,y:sp,z:cy*cp};
+    const right={x:cy,y:0,z:-sy};
+    const up={x:-sy*sp,y:cp,z:-cy*sp};
+    const horizontal=rand(-1.5,1.5), vertical=rand(-1.25,1.25);
+    const dir={x:forward.x+right.x*horizontal+up.x*vertical,
+               y:forward.y+right.y*horizontal+up.y*vertical,
+               z:forward.z+right.z*horizontal+up.z*vertical};
+    const mag=Math.hypot(dir.x,dir.y,dir.z)||1;
+    const x=camera.x+radius*dir.x/mag;
+    const y=camera.y+radius*dir.y/mag;
+    const z=camera.z+radius*dir.z/mag;
+    // Distant spheres are mostly tiny and faint; all radii remain randomized.
+    const baseR=distantOnly ? rand(.35,2.4) : rand(.75,8.5);
+    const removeAt=68*(1-Math.pow(Math.random(),1/1.65));
+    obstacles.push({x,y,z,r:0,baseR,age:0,removeAt,fadeDelay:0,fadeDuration:rand(.15,.65),ja:rand(.12,.8),jf:rand(1.4,4.8),jp:rand(0,Math.PI*2)});
+    // Occasionally create a loose cluster with a shared center.
+    if(allowCluster && Math.random()<0.025){
+      const count= Math.floor(rand(3,8));
+      for(let i=0;i<count;i++){
+        const cr=rand(1.25,3.6);
+        // Much wider spacing: clusters read as loose constellations, not balls.
+        const rr=rand(4,24);
+        const ca=rand(0,Math.PI*2), cu=rand(-1,1), cring=Math.sqrt(1-cu*cu);
+        const cb={x:x+rr*cring*Math.cos(ca),y:y+rr*cu,z:z+rr*cring*Math.sin(ca)};
+        obstacles.push({x:cb.x,y:cb.y,z:cb.z,r:0,baseR:cr,age:0,removeAt:68*(1-Math.pow(Math.random(),1/1.65)),fadeDelay:0,fadeDuration:rand(.15,.65),ja:rand(.12,.8),jf:rand(1.4,4.8),jp:rand(0,Math.PI*2)});
+      }
+    }
+  }
+  function addLine(){
+    // Random 3D lines throughout the world, not aimed along the current camera direction.
+    const radius=Math.cbrt(rand(2.5**3,78**3));
+    const az=rand(0,Math.PI*2), u=rand(-1,1);
+    const ring=Math.sqrt(1-u*u);
+    const cx=camera.x+radius*ring*Math.cos(az);
+    const cy=camera.y+radius*u;
+    const cz=camera.z+radius*ring*Math.sin(az);
+    let dx=rand(-1,1),dy=rand(-1,1),dz=rand(-1,1);
+    const mag=Math.hypot(dx,dy,dz)||1; dx/=mag; dy/=mag; dz/=mag;
+    const len=rand(12,155);
+    lines.push({
+      x1:cx-dx*len,y1:cy-dy*len,z1:cz-dz*len,
+      x2:cx+dx*len,y2:cy+dy*len,z2:cz+dz*len,
+      width:rand(.035,.11),
+      removeAt:68*(1-Math.pow(Math.random(),1/1.65))
+    });
+  }
+  function update(dt){
+    elapsed+=dt;
+    // Reverse the original progression: begin saturated, then steadily return to white.
+    const reverseDuration=68;
+    speed=-6.75;
+    obstacles=obstacles.filter(o=>o.removeAt>elapsed);
+    lines=lines.filter(l=>l.removeAt>elapsed);
+    // Keyboard rotates the view; the camera travels backward through the scene.
+    const yawInput=(keys.has('d')||keys.has('arrowright')?1:0)-(keys.has('a')||keys.has('arrowleft')?1:0);
+    const pitchInput=(keys.has('w')||keys.has('arrowup')?1:0)-(keys.has('s')||keys.has('arrowdown')?1:0);
+    targetAngle+=yawInput*1.15*dt;
+    targetPitch=clamp(targetPitch+pitchInput*.8*dt,-1.18,1.18);
+    // Heavy, delayed camera response with a little inertia.
+    const follow=1-Math.exp(-dt*2.7);
+    angle+=(targetAngle-angle)*follow;
+    pitch+=(targetPitch-pitch)*follow;
+    const vx=Math.sin(angle)*Math.cos(pitch)*speed, vy=Math.sin(pitch)*speed, vz=Math.cos(angle)*Math.cos(pitch)*speed;
+    camera.x+=vx*dt; camera.y+=vy*dt; camera.z+=vz*dt;
+    // Subtle handheld drift all the time; a short, smooth turbulence swell when passing near a sphere.
+    let proximity=0;
+    for(const o of obstacles){
+      const dx=o.x-camera.x,dy=o.y-camera.y,dz=o.z-camera.z;
+      const d=Math.hypot(dx,dy,dz);
+      if(d<18){proximity=Math.max(proximity,clamp((18-d)/15,0,1));}
+    }
+    const desiredTurbulence=proximity*proximity;
+    handTurbulence+=(desiredTurbulence-handTurbulence)*(1-Math.exp(-dt*(desiredTurbulence>handTurbulence?8.5:7.5)));
+    const depthOf=(o)=>{const dx=o.x-camera.x,dy=o.y-camera.y,dz=o.z-camera.z;return dx*Math.sin(angle)*Math.cos(pitch)+dy*Math.sin(pitch)+dz*Math.cos(angle)*Math.cos(pitch);};
+    for(const o of obstacles){
+      o.age+=dt;
+      // Smooth emergence: ease-in/out radius, with opacity rising alongside it.
+      const t=clamp((o.age-o.fadeDelay)/o.fadeDuration,0,1);
+      o.grow=t*t*(3-2*t);
+      o.r=o.baseR*o.grow;
+    }
+    // Objects are permanent: once created, they are never removed.
+
+    for(const o of obstacles){const dx=o.x-camera.x,dy=o.y-camera.y,dz=o.z-camera.z;if(Math.hypot(dx,dy,dz)<o.r+.42){flashUntil=performance.now()+110;break;}}
+    for(const l of lines){const depth=depthOf({x:(l.x1+l.x2)/2,y:(l.y1+l.y2)/2,z:((l.z1??l.z)+(l.z2??l.z))/2});if(Math.abs(depth)<.35){const dx=l.x2-l.x1,dy=l.y2-l.y1,len=Math.hypot(dx,dy)||1;const d=Math.abs(dx*(l.y1-camera.y)-dy*(l.x1-camera.x))/len;if(d<Math.max(.22,l.width+.16)){flashUntil=performance.now()+110;break;}}}
+  }
+  function frame(now){
+    if(!running)return;
+    const dt=Math.min((now-lastAt)/1000||0, .04); lastAt=now;
+    update(dt);
+    if(!running)return;
+    draw();
+    // Collision inversion flash temporarily disabled.
+    raf=requestAnimationFrame(frame);
+  }
+  function begin(){
+    cancelAnimationFrame(raf); reset(); running=true; overlay.hidden=true;
+    overlay.style.background='rgba(255,255,255,.94)'; overlay.style.color='#000';
+    overlay.querySelector('.kicker').textContent='An impossible space';
+    overlay.querySelector('h1').innerHTML='STAY<br>ALIVE.';
+    overlay.querySelector('.desc').innerHTML='Белое пространство. Чёрные препятствия.<br>Движение не остановить. Пустоты не останется.';
+    overlay.querySelector('.desc').style.color='#555';
+    startBtn.style.background='#000'; startBtn.style.color='#fff'; startBtn.style.borderColor='#000';
+    lastAt=performance.now(); startAt=lastAt; raf=requestAnimationFrame(frame);
+  }
+  function steer(e){
+    const r=canvas.getBoundingClientRect();
+    const px=e.clientX-r.left, py=e.clientY-r.top;
+    if(pointerX!==null && running){
+      targetAngle+=(px-pointerX)*.0032;
+      targetPitch=clamp(targetPitch-(py-pointerY)*.0018,-1.18,1.18);
+    }
+    pointerX=px; pointerY=py;
+  }
+  window.addEventListener('keydown',e=>{
+    const k=e.key.toLowerCase();
+    if(['w','a','s','d','arrowup','arrowdown','arrowleft','arrowright'].includes(k)){keys.add(k);e.preventDefault();}
+  });
+  window.addEventListener('keyup',e=>keys.delete(e.key.toLowerCase()));
+  window.addEventListener('blur',()=>keys.clear());
+  canvas.addEventListener('pointermove',e=>{if(running)steer(e);});
+  canvas.addEventListener('pointerdown',e=>{canvas.setPointerCapture?.(e.pointerId);steer(e);});
+  startBtn.addEventListener('click',begin);
+  window.addEventListener('resize',resize);
+  resize();
+  begin();
+})();
+</script>
+</body>
+</html>
