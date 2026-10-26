@@ -97,7 +97,7 @@ a:hover {
 
 .gallery {
   clear: both;
- columns: 3;
+ columns: 2;
  gap: 20px;
 }
 
