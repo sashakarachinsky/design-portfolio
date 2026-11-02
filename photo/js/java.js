@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   lightbox.addEventListener('click', e => {
-    if (e.target === lightbox) {
+    if (e.target === lightbox || e.target === lightboxImg) {
       lightbox.classList.remove('active');
     }
   });
