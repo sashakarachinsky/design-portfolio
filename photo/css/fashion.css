@@ -99,6 +99,7 @@ a:hover {
   clear: both;
  columns: 2;
  gap: 20px;
+ padding: 0 0 16px 0;
 }
 
 .gallery img {
